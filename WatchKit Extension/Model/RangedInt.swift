@@ -1,6 +1,6 @@
 //
 //  RangedInt.swift
-//  DontRest WatchKit Extension
+//  WatchKit Extension
 //
 //  Created by Gergely Sánta on 26/03/2019.
 //  Copyright © 2019 TriKatz. All rights reserved.

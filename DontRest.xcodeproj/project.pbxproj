@@ -22,9 +22,10 @@
 		74CDB5A622480EDD00A201F9 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5A522480EDD00A201F9 /* ExtensionDelegate.swift */; };
 		74CDB5A822480EDD00A201F9 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5A722480EDD00A201F9 /* NotificationController.swift */; };
 		74CDB5AA22480EDE00A201F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CDB5A922480EDE00A201F9 /* Assets.xcassets */; };
-		74CDB5BB22481A0300A201F9 /* SetupInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5BA22481A0300A201F9 /* SetupInterfaceController.swift */; };
+		74CDB5BB22481A0300A201F9 /* SetupActivityInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5BA22481A0300A201F9 /* SetupActivityInterfaceController.swift */; };
 		74CDB5BD2248AD4400A201F9 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5BC2248AD4400A201F9 /* Configuration.swift */; };
 		74CDB5BF2248B4C500A201F9 /* WorkoutInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5BE2248B4C500A201F9 /* WorkoutInterfaceController.swift */; };
+		74F47709224AB60600E3351C /* SetupTimesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F47708224AB60600E3351C /* SetupTimesInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,9 +91,10 @@
 		74CDB5A922480EDE00A201F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74CDB5AB22480EDE00A201F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74CDB5AC22480EDE00A201F9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		74CDB5BA22481A0300A201F9 /* SetupInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupInterfaceController.swift; sourceTree = "<group>"; };
+		74CDB5BA22481A0300A201F9 /* SetupActivityInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupActivityInterfaceController.swift; sourceTree = "<group>"; };
 		74CDB5BC2248AD4400A201F9 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		74CDB5BE2248B4C500A201F9 /* WorkoutInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInterfaceController.swift; sourceTree = "<group>"; };
+		74F47708224AB60600E3351C /* SetupTimesInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTimesInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +173,8 @@
 			children = (
 				74CDB5A522480EDD00A201F9 /* ExtensionDelegate.swift */,
 				74CDB5A322480EDD00A201F9 /* MainInterfaceController.swift */,
-				74CDB5BA22481A0300A201F9 /* SetupInterfaceController.swift */,
+				74CDB5BA22481A0300A201F9 /* SetupActivityInterfaceController.swift */,
+				74F47708224AB60600E3351C /* SetupTimesInterfaceController.swift */,
 				74CDB5BE2248B4C500A201F9 /* WorkoutInterfaceController.swift */,
 				74CDB5A722480EDD00A201F9 /* NotificationController.swift */,
 				746A5AEA2249E7FC00E2FA79 /* Model */,
@@ -329,8 +332,9 @@
 				74CDB5A622480EDD00A201F9 /* ExtensionDelegate.swift in Sources */,
 				746A5AEE2249E86200E2FA79 /* RangedTime.swift in Sources */,
 				74CDB5A422480EDD00A201F9 /* MainInterfaceController.swift in Sources */,
+				74F47709224AB60600E3351C /* SetupTimesInterfaceController.swift in Sources */,
 				746A5AEC2249E82C00E2FA79 /* RangedInt.swift in Sources */,
-				74CDB5BB22481A0300A201F9 /* SetupInterfaceController.swift in Sources */,
+				74CDB5BB22481A0300A201F9 /* SetupActivityInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,6 @@
 //
 //  Configuration.swift
-//  DontRest WatchKit Extension
+//  WatchKit Extension
 //
 //  Created by Gergely Sánta on 25/03/2019.
 //  Copyright © 2019 TriKatz. All rights reserved.
@@ -30,5 +30,24 @@ class Configuration {
 		(name: "Other", type: .other)
 	]
 	var activity:HKWorkoutActivityType = .other
+
+	var activityIndex:Int {
+		get {
+			for (index, listedActivity) in availableActivities.enumerated() {
+				if listedActivity.type == activity {
+					return index
+				}
+			}
+			return 0
+		}
+		set {
+			if (newValue >= 0) && (newValue < availableActivities.count) {
+				activity = availableActivities[newValue].type
+				#if DEBUG
+				NSLog("Activity: \(availableActivities[newValue].name)")
+				#endif
+			}
+		}
+	}
 
 }

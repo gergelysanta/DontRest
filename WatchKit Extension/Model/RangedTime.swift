@@ -1,6 +1,6 @@
 //
 //  RangedTime.swift
-//  DontRest WatchKit Extension
+//  WatchKit Extension
 //
 //  Created by Gergely Sánta on 26/03/2019.
 //  Copyright © 2019 TriKatz. All rights reserved.
@@ -46,9 +46,6 @@ class RangedTime {
 			if (newValue >= 0) && (newValue < availableMinutes.count) {
 				let remainingSeconds = seconds % 60
 				seconds = (availableMinutes[newValue] * 60) + remainingSeconds
-				#if DEBUG
-				NSLog("RangedTime: \(seconds)s")
-				#endif
 			}
 		}
 	}
@@ -64,9 +61,6 @@ class RangedTime {
 			if (newValue >= 0) && (newValue < availableSeconds.count) {
 				let remainingMinutes = seconds / 60
 				seconds = (remainingMinutes * 60) + availableSeconds[newValue]
-				#if DEBUG
-				NSLog("RangedTime: \(seconds)s")
-				#endif
 			}
 		}
 	}

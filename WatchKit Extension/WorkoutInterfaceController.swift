@@ -1,6 +1,6 @@
 //
 //  WorkoutInterfaceController.swift
-//  DontRest WatchKit Extension
+//  WatchKit Extension
 //
 //  Created by Gergely Sánta on 25/03/2019.
 //  Copyright © 2019 TriKatz. All rights reserved.
@@ -29,7 +29,7 @@ class WorkoutInterfaceController: WKInterfaceController {
     }
 
 	@IBAction func endButtonTapped() {
-		WKInterfaceController.reloadRootControllers(withNames: ["MainInterface", "SetupInterface"], contexts: nil)
+		WKInterfaceController.reloadRootControllers(withNames: ["MainInterface", "SetupActivityInterface", "SetupTimesInterface"], contexts: nil)
 	}
 
 }

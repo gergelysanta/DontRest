@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  DontRest
+//  DontRest App
 //
 //  Created by Gergely Sánta on 24/03/2019.
 //  Copyright © 2019 TriKatz. All rights reserved.
