@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		746A5AEC2249E82C00E2FA79 /* RangedInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A5AEB2249E82C00E2FA79 /* RangedInt.swift */; };
+		746A5AEE2249E86200E2FA79 /* RangedTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A5AED2249E86200E2FA79 /* RangedTime.swift */; };
 		74CDB58122480EDB00A201F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB58022480EDB00A201F9 /* AppDelegate.swift */; };
 		74CDB58322480EDB00A201F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB58222480EDB00A201F9 /* ViewController.swift */; };
 		74CDB58622480EDB00A201F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74CDB58422480EDB00A201F9 /* Main.storyboard */; };
@@ -16,10 +18,13 @@
 		74CDB59622480EDD00A201F9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74CDB59422480EDD00A201F9 /* Interface.storyboard */; };
 		74CDB59822480EDD00A201F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CDB59722480EDD00A201F9 /* Assets.xcassets */; };
 		74CDB59F22480EDD00A201F9 /* DontRest WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 74CDB59E22480EDD00A201F9 /* DontRest WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		74CDB5A422480EDD00A201F9 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5A322480EDD00A201F9 /* InterfaceController.swift */; };
+		74CDB5A422480EDD00A201F9 /* MainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5A322480EDD00A201F9 /* MainInterfaceController.swift */; };
 		74CDB5A622480EDD00A201F9 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5A522480EDD00A201F9 /* ExtensionDelegate.swift */; };
 		74CDB5A822480EDD00A201F9 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5A722480EDD00A201F9 /* NotificationController.swift */; };
 		74CDB5AA22480EDE00A201F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CDB5A922480EDE00A201F9 /* Assets.xcassets */; };
+		74CDB5BB22481A0300A201F9 /* SetupInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5BA22481A0300A201F9 /* SetupInterfaceController.swift */; };
+		74CDB5BD2248AD4400A201F9 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5BC2248AD4400A201F9 /* Configuration.swift */; };
+		74CDB5BF2248B4C500A201F9 /* WorkoutInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5BE2248B4C500A201F9 /* WorkoutInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +70,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		746A5AEB2249E82C00E2FA79 /* RangedInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangedInt.swift; sourceTree = "<group>"; };
+		746A5AED2249E86200E2FA79 /* RangedTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangedTime.swift; sourceTree = "<group>"; };
 		74CDB57D22480EDB00A201F9 /* DontRest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DontRest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74CDB58022480EDB00A201F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74CDB58222480EDB00A201F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,12 +84,15 @@
 		74CDB59722480EDD00A201F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74CDB59922480EDD00A201F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74CDB59E22480EDD00A201F9 /* DontRest WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DontRest WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		74CDB5A322480EDD00A201F9 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		74CDB5A322480EDD00A201F9 /* MainInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInterfaceController.swift; sourceTree = "<group>"; };
 		74CDB5A522480EDD00A201F9 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		74CDB5A722480EDD00A201F9 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		74CDB5A922480EDE00A201F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74CDB5AB22480EDE00A201F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74CDB5AC22480EDE00A201F9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		74CDB5BA22481A0300A201F9 /* SetupInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupInterfaceController.swift; sourceTree = "<group>"; };
+		74CDB5BC2248AD4400A201F9 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		74CDB5BE2248B4C500A201F9 /* WorkoutInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +113,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		746A5AEA2249E7FC00E2FA79 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74CDB5BC2248AD4400A201F9 /* Configuration.swift */,
+				746A5AEB2249E82C00E2FA79 /* RangedInt.swift */,
+				746A5AED2249E86200E2FA79 /* RangedTime.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		74CDB57422480EDB00A201F9 = {
 			isa = PBXGroup;
 			children = (
@@ -149,9 +169,12 @@
 		74CDB5A222480EDD00A201F9 /* DontRest WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				74CDB5A322480EDD00A201F9 /* InterfaceController.swift */,
 				74CDB5A522480EDD00A201F9 /* ExtensionDelegate.swift */,
+				74CDB5A322480EDD00A201F9 /* MainInterfaceController.swift */,
+				74CDB5BA22481A0300A201F9 /* SetupInterfaceController.swift */,
+				74CDB5BE2248B4C500A201F9 /* WorkoutInterfaceController.swift */,
 				74CDB5A722480EDD00A201F9 /* NotificationController.swift */,
+				746A5AEA2249E7FC00E2FA79 /* Model */,
 				74CDB5A922480EDE00A201F9 /* Assets.xcassets */,
 				74CDB5AB22480EDE00A201F9 /* Info.plist */,
 				74CDB5AC22480EDE00A201F9 /* PushNotificationPayload.apns */,
@@ -300,9 +323,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74CDB5BD2248AD4400A201F9 /* Configuration.swift in Sources */,
 				74CDB5A822480EDD00A201F9 /* NotificationController.swift in Sources */,
+				74CDB5BF2248B4C500A201F9 /* WorkoutInterfaceController.swift in Sources */,
 				74CDB5A622480EDD00A201F9 /* ExtensionDelegate.swift in Sources */,
-				74CDB5A422480EDD00A201F9 /* InterfaceController.swift in Sources */,
+				746A5AEE2249E86200E2FA79 /* RangedTime.swift in Sources */,
+				74CDB5A422480EDD00A201F9 /* MainInterfaceController.swift in Sources */,
+				746A5AEC2249E82C00E2FA79 /* RangedInt.swift in Sources */,
+				74CDB5BB22481A0300A201F9 /* SetupInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,7 +589,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.trikatz.DontRest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -579,7 +607,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.trikatz.DontRest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

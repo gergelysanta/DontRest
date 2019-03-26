@@ -1,16 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14256" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch40" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14243"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14219"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Don't Rest!-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller identifier="MainInterface" title="Don't Rest!" id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="DontRest_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Sets:" id="dDl-C0-Lzy">
+                            <fontDescription key="font" type="system" pointSize="10"/>
+                        </label>
+                        <group width="1" alignment="left" id="uFx-VQ-Oq8">
+                            <items>
+                                <label width="0.20000000000000001" alignment="left" id="JPO-Nu-7lP"/>
+                                <button width="0.25" alignment="left" title="-" id="EJ6-Bv-mTj">
+                                    <fontDescription key="font" type="system" pointSize="28"/>
+                                    <connections>
+                                        <action selector="decreaseSetsButtonTapped" destination="AgC-eL-Hgc" id="VTj-Iv-JnN"/>
+                                    </connections>
+                                </button>
+                                <picker width="0.29999999999999999" height="1" alignment="left" focusStyle="stack" indicatorMode="shownWhileFocused" id="pXa-9y-S4h">
+                                    <connections>
+                                        <action selector="setsPickerValueChanged:" destination="AgC-eL-Hgc" id="fti-qs-hkg"/>
+                                    </connections>
+                                </picker>
+                                <button width="0.25" alignment="left" title="+" id="76i-7m-bJH">
+                                    <fontDescription key="font" type="system" pointSize="28"/>
+                                    <connections>
+                                        <action selector="increaseSetsButtonTapped" destination="AgC-eL-Hgc" id="lkZ-po-Mee"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Rest time:" id="Ixv-Ma-Ddb">
+                            <fontDescription key="font" type="system" pointSize="10"/>
+                        </label>
+                        <group width="1" alignment="left" id="CdL-zs-9GK">
+                            <items>
+                                <button width="0.25" alignment="left" title="-" id="r1y-C8-okP">
+                                    <fontDescription key="font" type="system" pointSize="28"/>
+                                    <connections>
+                                        <action selector="decreaseSetsRestTimeButtonTapped" destination="AgC-eL-Hgc" id="QIT-lY-vDS"/>
+                                    </connections>
+                                </button>
+                                <picker width="0.25" height="1" alignment="left" focusStyle="stack" indicatorMode="shownWhileFocused" id="AvQ-nw-8r7">
+                                    <connections>
+                                        <action selector="restSetsMinutesValueChanged:" destination="AgC-eL-Hgc" id="ikA-fp-cqo"/>
+                                    </connections>
+                                </picker>
+                                <picker width="0.25" height="1" alignment="left" focusStyle="stack" indicatorMode="shownWhileFocused" id="3GU-B5-8OU">
+                                    <connections>
+                                        <action selector="restSetsSecondsValueChanged:" destination="AgC-eL-Hgc" id="czS-Xz-Kdb"/>
+                                    </connections>
+                                </picker>
+                                <button width="0.25" alignment="left" title="+" id="X6e-Y2-Qxb">
+                                    <fontDescription key="font" type="system" pointSize="28"/>
+                                    <connections>
+                                        <action selector="increaseSetsRestTimeButtonTapped" destination="AgC-eL-Hgc" id="1Yf-6A-mdh"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Rest between exercises:" id="JXD-LG-Wnn">
+                            <fontDescription key="font" type="system" pointSize="10"/>
+                        </label>
+                        <group width="1" alignment="left" id="uLy-0J-fQd">
+                            <items>
+                                <button width="0.25" alignment="left" title="-" id="694-yM-Oyr">
+                                    <fontDescription key="font" type="system" pointSize="28"/>
+                                    <connections>
+                                        <action selector="decreaseExercisesRestTimeButtonTapped" destination="AgC-eL-Hgc" id="hLv-F4-h33"/>
+                                    </connections>
+                                </button>
+                                <picker width="0.25" height="1" alignment="left" focusStyle="stack" indicatorMode="shownWhileFocused" id="ANb-CU-7sp">
+                                    <connections>
+                                        <action selector="restExercisesMinutesValueChanged:" destination="AgC-eL-Hgc" id="ewo-L2-zMx"/>
+                                    </connections>
+                                </picker>
+                                <picker width="0.25" height="1" alignment="left" focusStyle="stack" indicatorMode="shownWhileFocused" id="ycu-Wz-Wiu">
+                                    <connections>
+                                        <action selector="restExercisesSecondsValueChanged:" destination="AgC-eL-Hgc" id="ijU-nx-wZI"/>
+                                    </connections>
+                                </picker>
+                                <button width="0.25" alignment="left" title="+" id="ZBB-t2-zBc">
+                                    <fontDescription key="font" type="system" pointSize="28"/>
+                                    <connections>
+                                        <action selector="increaseExercisesRestTimeButtonTapped" destination="AgC-eL-Hgc" id="B7W-ca-HFs"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <separator alignment="left" id="age-dV-J1D"/>
+                        <button width="1" alignment="left" title="Start" id="WRj-hM-uhZ">
+                            <color key="backgroundColor" red="0.1765111094" green="0.68014355959999995" blue="0.51195098959999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="system" pointSize="20"/>
+                            <connections>
+                                <action selector="startButtonTapped" destination="AgC-eL-Hgc" id="lGX-31-AoE"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="restExercisesMinutePicker" destination="ANb-CU-7sp" id="JuG-gp-hBd"/>
+                        <outlet property="restExercisesSecondsPicker" destination="ycu-Wz-Wiu" id="9Pa-sI-28W"/>
+                        <outlet property="restSetsTimeMinutesPicker" destination="AvQ-nw-8r7" id="JiD-Ae-lyv"/>
+                        <outlet property="restSetsTimeSecondsPicker" destination="3GU-B5-8OU" id="Owc-J5-t79"/>
+                        <outlet property="setsCountPicker" destination="pXa-9y-S4h" id="Hjb-rv-tqy"/>
+                        <segue destination="HW1-nu-tJI" kind="relationship" relationship="nextPage" id="EXB-Ab-74M"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="220" y="292"/>
+        </scene>
+        <!--Setup-->
+        <scene sceneID="ikU-kq-pse">
+            <objects>
+                <controller identifier="SetupInterface" title="Setup" id="HW1-nu-tJI" customClass="SetupInterfaceController" customModule="DontRest_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Activity type:" id="zZU-7f-Up4"/>
+                        <picker height="60" alignment="left" focusStyle="stack" id="FRt-jW-H0z">
+                            <connections>
+                                <action selector="activityPickerChanged:" destination="HW1-nu-tJI" id="Gfv-4u-ayd"/>
+                            </connections>
+                        </picker>
+                    </items>
+                    <connections>
+                        <outlet property="activityPicker" destination="FRt-jW-H0z" id="W0w-vu-pYL"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="493" y="291"/>
+        </scene>
+        <!--Workout-->
+        <scene sceneID="eq3-JI-sxe">
+            <objects>
+                <controller identifier="WorkoutInterface" title="Workout" id="JUj-1I-NbI" customClass="WorkoutInterfaceController" customModule="DontRest_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" id="TBb-qh-mn8"/>
+                        <button width="1" alignment="left" title="End" id="L3E-eT-TFH">
+                            <color key="backgroundColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                            <connections>
+                                <action selector="endButtonTapped" destination="JUj-1I-NbI" id="CtS-vq-DA7"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="755.39130434782601" y="292.1875"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -32,16 +174,16 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="DontRest_WatchKit_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="493" y="1025"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="DontRest_WatchKit_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="493" y="642"/>
         </scene>
     </scenes>
 </document>
