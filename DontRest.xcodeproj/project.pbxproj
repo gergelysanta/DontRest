@@ -14,10 +14,10 @@
 		74CDB58622480EDB00A201F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74CDB58422480EDB00A201F9 /* Main.storyboard */; };
 		74CDB58822480EDC00A201F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CDB58722480EDC00A201F9 /* Assets.xcassets */; };
 		74CDB58B22480EDC00A201F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74CDB58922480EDC00A201F9 /* LaunchScreen.storyboard */; };
-		74CDB59022480EDD00A201F9 /* DontRest WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 74CDB58F22480EDD00A201F9 /* DontRest WatchKit App.app */; };
+		74CDB59022480EDD00A201F9 /* WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 74CDB58F22480EDD00A201F9 /* WatchKit App.app */; };
 		74CDB59622480EDD00A201F9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74CDB59422480EDD00A201F9 /* Interface.storyboard */; };
 		74CDB59822480EDD00A201F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CDB59722480EDD00A201F9 /* Assets.xcassets */; };
-		74CDB59F22480EDD00A201F9 /* DontRest WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 74CDB59E22480EDD00A201F9 /* DontRest WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		74CDB59F22480EDD00A201F9 /* WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 74CDB59E22480EDD00A201F9 /* WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		74CDB5A422480EDD00A201F9 /* MainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5A322480EDD00A201F9 /* MainInterfaceController.swift */; };
 		74CDB5A622480EDD00A201F9 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5A522480EDD00A201F9 /* ExtensionDelegate.swift */; };
 		74CDB5A822480EDD00A201F9 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5A722480EDD00A201F9 /* NotificationController.swift */; };
@@ -51,7 +51,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				74CDB59F22480EDD00A201F9 /* DontRest WatchKit Extension.appex in Embed App Extensions */,
+				74CDB59F22480EDD00A201F9 /* WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,7 +62,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				74CDB59022480EDD00A201F9 /* DontRest WatchKit App.app in Embed Watch Content */,
+				74CDB59022480EDD00A201F9 /* WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,11 +79,11 @@
 		74CDB58722480EDC00A201F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74CDB58A22480EDC00A201F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74CDB58C22480EDC00A201F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74CDB58F22480EDD00A201F9 /* DontRest WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DontRest WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74CDB58F22480EDD00A201F9 /* WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74CDB59522480EDD00A201F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		74CDB59722480EDD00A201F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74CDB59922480EDD00A201F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74CDB59E22480EDD00A201F9 /* DontRest WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DontRest WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74CDB59E22480EDD00A201F9 /* WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74CDB5A322480EDD00A201F9 /* MainInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInterfaceController.swift; sourceTree = "<group>"; };
 		74CDB5A522480EDD00A201F9 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		74CDB5A722480EDD00A201F9 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -127,8 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				74CDB57F22480EDB00A201F9 /* DontRest */,
-				74CDB59322480EDD00A201F9 /* DontRest WatchKit App */,
-				74CDB5A222480EDD00A201F9 /* DontRest WatchKit Extension */,
+				74CDB59322480EDD00A201F9 /* WatchKit App */,
+				74CDB5A222480EDD00A201F9 /* WatchKit Extension */,
 				74CDB57E22480EDB00A201F9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -137,8 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				74CDB57D22480EDB00A201F9 /* DontRest.app */,
-				74CDB58F22480EDD00A201F9 /* DontRest WatchKit App.app */,
-				74CDB59E22480EDD00A201F9 /* DontRest WatchKit Extension.appex */,
+				74CDB58F22480EDD00A201F9 /* WatchKit App.app */,
+				74CDB59E22480EDD00A201F9 /* WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,17 +156,17 @@
 			path = DontRest;
 			sourceTree = "<group>";
 		};
-		74CDB59322480EDD00A201F9 /* DontRest WatchKit App */ = {
+		74CDB59322480EDD00A201F9 /* WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
 				74CDB59422480EDD00A201F9 /* Interface.storyboard */,
 				74CDB59722480EDD00A201F9 /* Assets.xcassets */,
 				74CDB59922480EDD00A201F9 /* Info.plist */,
 			);
-			path = "DontRest WatchKit App";
+			path = "WatchKit App";
 			sourceTree = "<group>";
 		};
-		74CDB5A222480EDD00A201F9 /* DontRest WatchKit Extension */ = {
+		74CDB5A222480EDD00A201F9 /* WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
 				74CDB5A522480EDD00A201F9 /* ExtensionDelegate.swift */,
@@ -179,7 +179,7 @@
 				74CDB5AB22480EDE00A201F9 /* Info.plist */,
 				74CDB5AC22480EDE00A201F9 /* PushNotificationPayload.apns */,
 			);
-			path = "DontRest WatchKit Extension";
+			path = "WatchKit Extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +204,9 @@
 			productReference = 74CDB57D22480EDB00A201F9 /* DontRest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		74CDB58E22480EDD00A201F9 /* DontRest WatchKit App */ = {
+		74CDB58E22480EDD00A201F9 /* WatchKit App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74CDB5B322480EDE00A201F9 /* Build configuration list for PBXNativeTarget "DontRest WatchKit App" */;
+			buildConfigurationList = 74CDB5B322480EDE00A201F9 /* Build configuration list for PBXNativeTarget "WatchKit App" */;
 			buildPhases = (
 				74CDB58D22480EDD00A201F9 /* Resources */,
 				74CDB5B222480EDE00A201F9 /* Embed App Extensions */,
@@ -216,14 +216,14 @@
 			dependencies = (
 				74CDB5A122480EDD00A201F9 /* PBXTargetDependency */,
 			);
-			name = "DontRest WatchKit App";
+			name = "WatchKit App";
 			productName = "DontRest WatchKit App";
-			productReference = 74CDB58F22480EDD00A201F9 /* DontRest WatchKit App.app */;
+			productReference = 74CDB58F22480EDD00A201F9 /* WatchKit App.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		74CDB59D22480EDD00A201F9 /* DontRest WatchKit Extension */ = {
+		74CDB59D22480EDD00A201F9 /* WatchKit Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74CDB5AF22480EDE00A201F9 /* Build configuration list for PBXNativeTarget "DontRest WatchKit Extension" */;
+			buildConfigurationList = 74CDB5AF22480EDE00A201F9 /* Build configuration list for PBXNativeTarget "WatchKit Extension" */;
 			buildPhases = (
 				74CDB59A22480EDD00A201F9 /* Sources */,
 				74CDB59B22480EDD00A201F9 /* Frameworks */,
@@ -233,9 +233,9 @@
 			);
 			dependencies = (
 			);
-			name = "DontRest WatchKit Extension";
+			name = "WatchKit Extension";
 			productName = "DontRest WatchKit Extension";
-			productReference = 74CDB59E22480EDD00A201F9 /* DontRest WatchKit Extension.appex */;
+			productReference = 74CDB59E22480EDD00A201F9 /* WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
@@ -273,8 +273,8 @@
 			projectRoot = "";
 			targets = (
 				74CDB57C22480EDB00A201F9 /* DontRest */,
-				74CDB58E22480EDD00A201F9 /* DontRest WatchKit App */,
-				74CDB59D22480EDD00A201F9 /* DontRest WatchKit Extension */,
+				74CDB58E22480EDD00A201F9 /* WatchKit App */,
+				74CDB59D22480EDD00A201F9 /* WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -339,12 +339,12 @@
 /* Begin PBXTargetDependency section */
 		74CDB59222480EDD00A201F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 74CDB58E22480EDD00A201F9 /* DontRest WatchKit App */;
+			target = 74CDB58E22480EDD00A201F9 /* WatchKit App */;
 			targetProxy = 74CDB59122480EDD00A201F9 /* PBXContainerItemProxy */;
 		};
 		74CDB5A122480EDD00A201F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 74CDB59D22480EDD00A201F9 /* DontRest WatchKit Extension */;
+			target = 74CDB59D22480EDD00A201F9 /* WatchKit Extension */;
 			targetProxy = 74CDB5A022480EDD00A201F9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -435,6 +435,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -489,6 +490,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -499,17 +501,16 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y9N34UZ32J;
-				INFOPLIST_FILE = "DontRest WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.trikatz.DontRest.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trikatz.dontrest.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
@@ -521,17 +522,16 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y9N34UZ32J;
-				INFOPLIST_FILE = "DontRest WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.trikatz.DontRest.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trikatz.dontrest.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
@@ -545,8 +545,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y9N34UZ32J;
 				IBSC_MODULE = DontRest_WatchKit_Extension;
-				INFOPLIST_FILE = "DontRest WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.trikatz.DontRest.watchkitapp;
+				INFOPLIST_FILE = "WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trikatz.dontrest.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -564,8 +564,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y9N34UZ32J;
 				IBSC_MODULE = DontRest_WatchKit_Extension;
-				INFOPLIST_FILE = "DontRest WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.trikatz.DontRest.watchkitapp;
+				INFOPLIST_FILE = "WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trikatz.dontrest.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -586,9 +586,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.trikatz.DontRest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trikatz.dontrest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -604,9 +603,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.trikatz.DontRest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trikatz.dontrest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -623,7 +621,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74CDB5AF22480EDE00A201F9 /* Build configuration list for PBXNativeTarget "DontRest WatchKit Extension" */ = {
+		74CDB5AF22480EDE00A201F9 /* Build configuration list for PBXNativeTarget "WatchKit Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74CDB5B022480EDE00A201F9 /* Debug */,
@@ -632,7 +630,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74CDB5B322480EDE00A201F9 /* Build configuration list for PBXNativeTarget "DontRest WatchKit App" */ = {
+		74CDB5B322480EDE00A201F9 /* Build configuration list for PBXNativeTarget "WatchKit App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74CDB5B422480EDE00A201F9 /* Debug */,

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch40" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
         <!--Don't Rest!-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="MainInterface" title="Don't Rest!" id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="DontRest_WatchKit_Extension">
+                <controller identifier="MainInterface" title="Don't Rest!" id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Sets:" id="dDl-C0-Lzy">
                             <fontDescription key="font" type="system" pointSize="10"/>
@@ -121,7 +121,7 @@
         <!--Setup-->
         <scene sceneID="ikU-kq-pse">
             <objects>
-                <controller identifier="SetupInterface" title="Setup" id="HW1-nu-tJI" customClass="SetupInterfaceController" customModule="DontRest_WatchKit_Extension">
+                <controller identifier="SetupInterface" title="Setup" id="HW1-nu-tJI" customClass="SetupInterfaceController" customModule="WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Activity type:" id="zZU-7f-Up4"/>
                         <picker height="60" alignment="left" focusStyle="stack" id="FRt-jW-H0z">
@@ -140,7 +140,7 @@
         <!--Workout-->
         <scene sceneID="eq3-JI-sxe">
             <objects>
-                <controller identifier="WorkoutInterface" title="Workout" id="JUj-1I-NbI" customClass="WorkoutInterfaceController" customModule="DontRest_WatchKit_Extension">
+                <controller identifier="WorkoutInterface" title="Workout" id="JUj-1I-NbI" customClass="WorkoutInterfaceController" customModule="WatchKit_Extension">
                     <items>
                         <group width="1" height="1" alignment="left" id="TBb-qh-mn8"/>
                         <button width="1" alignment="left" title="End" id="L3E-eT-TFH">
@@ -174,14 +174,14 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="DontRest_WatchKit_App" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="493" y="1025"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="DontRest_WatchKit_App" customModuleProvider="target"/>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="493" y="642"/>
         </scene>
