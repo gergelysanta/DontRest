@@ -2,8 +2,8 @@
 
 [![Xcode 10](https://img.shields.io/badge/Xcode-10-blue.svg)](https://developer.apple.com/xcode/)
 [![Swift 4](https://img.shields.io/badge/Swift-5-blue.svg)](https://swift.org/)
-[![Platform](https://img.shields.io/badge/platforms-iOS-blue.svg)](https://developer.apple.com/platforms/ios)
-[![Platform](https://img.shields.io/badge/platforms-watchOS-blue.svg)](https://developer.apple.com/platforms/watchos)
+[![Platform](https://img.shields.io/badge/platforms-iOS-blue.svg)](https://developer.apple.com/ios)
+[![Platform](https://img.shields.io/badge/platforms-watchOS-blue.svg)](https://developer.apple.com/watchos)
 
 Project still in development...
 
