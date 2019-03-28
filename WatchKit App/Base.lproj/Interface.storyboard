@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
@@ -18,7 +17,7 @@
                             <color key="backgroundColor" red="0.1765111094" green="0.68014355959999995" blue="0.51195098959999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" type="system" pointSize="20"/>
                             <connections>
-                                <action selector="startButtonTapped" destination="AgC-eL-Hgc" id="lGX-31-AoE"/>
+                                <segue destination="JUj-1I-NbI" kind="modal" id="htp-Go-mUe"/>
                             </connections>
                         </button>
                     </items>
@@ -155,7 +154,16 @@
             <objects>
                 <controller identifier="WorkoutInterface" title="Workout" id="JUj-1I-NbI" customClass="WorkoutInterfaceController" customModule="WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" id="TBb-qh-mn8"/>
+                        <label alignment="center" text="0" id="jGJ-m1-Keb">
+                            <fontDescription key="font" type="system" pointSize="42"/>
+                        </label>
+                        <label alignment="center" text="BPM" numberOfLines="0" id="6Tb-s7-hfN">
+                            <fontDescription key="font" type="system" pointSize="14"/>
+                        </label>
+                        <label alignment="left" text="Energy burned:" textAlignment="left" id="Mmw-gS-bBK">
+                            <fontDescription key="font" type="system" pointSize="14"/>
+                        </label>
+                        <label alignment="right" text="0 kCal" id="Vy0-qf-aeY"/>
                         <button width="1" alignment="left" title="End" id="L3E-eT-TFH">
                             <color key="backgroundColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                             <connections>
@@ -163,9 +171,16 @@
                             </connections>
                         </button>
                     </items>
+                    <connections>
+                        <outlet property="endButton" destination="L3E-eT-TFH" id="3vU-sc-lGL"/>
+                        <outlet property="energyLabel" destination="Vy0-qf-aeY" id="hoA-Ol-rvF"/>
+                        <outlet property="heartRateLabel" destination="jGJ-m1-Keb" id="UWW-ie-2Ff"/>
+                        <outlet property="heartRateUnitLabel" destination="6Tb-s7-hfN" id="UQq-Q1-WkH"/>
+                        <outlet property="infoLabel" destination="Mmw-gS-bBK" id="TXw-a9-UFM"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="769" y="659"/>
+            <point key="canvasLocation" x="493" y="-59"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

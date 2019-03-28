@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import HealthKit
 
 class MainInterfaceController: WKInterfaceController {
 
@@ -24,11 +25,5 @@ class MainInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
-	// MARK: - Start button
-
-	@IBAction func startButtonTapped() {
-		WKInterfaceController.reloadRootControllers(withNames: ["WorkoutInterface"], contexts: nil)
-	}
 
 }

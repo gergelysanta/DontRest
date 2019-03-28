@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSHealthShareUsageDescription</key>
+	<string>We need to read your heart rate data in order to determine if you&apos;re resting or not.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>We need to save your completed workouts.</string>
 </dict>
 </plist>
