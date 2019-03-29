@@ -12,10 +12,16 @@ import HealthKit
 
 class WorkoutInterfaceController: WKInterfaceController {
 
+	@IBOutlet var timer: WKInterfaceTimer!
+	@IBOutlet var errorLabel: WKInterfaceLabel!
 	@IBOutlet var heartRateLabel: WKInterfaceLabel!
-	@IBOutlet var heartRateUnitLabel: WKInterfaceLabel!
-	@IBOutlet var infoLabel: WKInterfaceLabel!
-	@IBOutlet var energyLabel: WKInterfaceLabel!
+	@IBOutlet var activeEnergyLabel: WKInterfaceLabel!
+	@IBOutlet var totalEnergyLabel: WKInterfaceLabel!
+
+	@IBOutlet var heartRateGroup: WKInterfaceGroup!
+	@IBOutlet var activeEnergyGroup: WKInterfaceGroup!
+	@IBOutlet var totalEnergyGroup: WKInterfaceGroup!
+
 	@IBOutlet var endButton: WKInterfaceButton!
 
 	var healthStore: HKHealthStore?
@@ -26,16 +32,10 @@ class WorkoutInterfaceController: WKInterfaceController {
 	var workoutStartDate = Date()
 	var workoutStopDate = Date()
 
+	var activeEnergyBurned = HKQuantity(unit: HKUnit.kilocalorie(), doubleValue: 0.0)
 	var totalEnergyBurned = HKQuantity(unit: HKUnit.kilocalorie(), doubleValue: 0.0)
 	var lastHeartRate = 0.0
 	var countPerMinuteUnit = HKUnit(from: "count/min")
-
-	func display(error: String) {
-		heartRateLabel.setHidden(true)
-		heartRateUnitLabel.setHidden(true)
-		energyLabel.setHidden(true)
-		infoLabel.setText(error)
-	}
 
 	override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -98,12 +98,35 @@ class WorkoutInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
-	@IBAction func endButtonTapped() {
-		workoutStopDate = Date()
-		workoutSession?.end()
-		endButton.setEnabled(false)
+	// -------------------------
+
+	private func display(error: String) {
+		errorLabel.setText(error)
+		errorLabel.setHidden(false)
+		timer.setHidden(true)
+		heartRateGroup.setHidden(true)
+		activeEnergyGroup.setHidden(true)
+		totalEnergyGroup.setHidden(true)
 	}
 
+	@IBAction func endButtonTapped() {
+		if let session = workoutSession {
+			// Remember stop date and end the workout
+			workoutStopDate = Date()
+			session.end()
+			// Disable "End" button to prevent multiple taps
+			endButton.setEnabled(false)
+		}
+		else {
+			// We don't have running workout session, simply dismiss this view
+			dismiss()
+		}
+	}
+
+	/// Start a query in HealthStore
+	///
+	/// - Parameter quantityTypeIdentifier: identifier of quantity which we want to query
+	/// - Returns: Query started successfully or not
 	private func startQuery(quantityTypeIdentifier: HKQuantityTypeIdentifier) -> Bool {
 		guard let sampleType = HKObjectType.quantityType(forIdentifier: quantityTypeIdentifier) else { return false }
 
@@ -145,6 +168,7 @@ class WorkoutInterfaceController: WKInterfaceController {
 		return true
 	}
 
+	/// Start all queryes for this workout
 	func startQueries() {
 		if !startQuery(quantityTypeIdentifier: .heartRate) ||
 			!startQuery(quantityTypeIdentifier: .activeEnergyBurned)
@@ -157,6 +181,7 @@ class WorkoutInterfaceController: WKInterfaceController {
 		}
 	}
 
+	/// Stop workout queries
 	func stopQueries() {
 		for query in activeDataQueries {
 			healthStore?.stop(query)
@@ -164,6 +189,9 @@ class WorkoutInterfaceController: WKInterfaceController {
 		activeDataQueries.removeAll()
 	}
 
+	/// Save session
+	///
+	/// - Parameter session: workout session
 	func save(session: HKWorkoutSession) {
 		guard healthStore?.authorizationStatus(for: HKObjectType.workoutType()) == .sharingAuthorized
 		else {
@@ -188,6 +216,11 @@ class WorkoutInterfaceController: WKInterfaceController {
 		}
 	}
 
+	/// Process data received from HealthKit
+	///
+	/// - Parameters:
+	///   - samples: received samples
+	///   - type: quantity type of samples
 	func process(samples: [HKQuantitySample], type: HKQuantityTypeIdentifier) {
 		guard workoutIsActive else { return }
 
@@ -203,9 +236,10 @@ class WorkoutInterfaceController: WKInterfaceController {
 				let currentEnergy = totalEnergyBurned.doubleValue(for: HKUnit.kilocalorie())
 				totalEnergyBurned = HKQuantity(unit: HKUnit.kilocalorie(), doubleValue: currentEnergy + newEnergy)
 
-				// Update label
+				// Update labels
 				let kiloCalories = totalEnergyBurned.doubleValue(for: HKUnit.kilocalorie())
-				energyLabel.setText(String(format: "%.0f kCal", kiloCalories))
+				activeEnergyLabel.setText(String(format: "%.0f", newEnergy))
+				totalEnergyLabel.setText(String(format: "%.0f", kiloCalories))
 			}
 		}
 	}
@@ -223,12 +257,15 @@ extension WorkoutInterfaceController: HKWorkoutSessionDelegate {
 			if fromState == .notStarted {
 				// Workout just started: start querying data
 				startQueries()
+				// Start timer
+				timer.start()
 			}
 			workoutIsActive = true
 		case .paused:
 			workoutIsActive = false
 		case .ended:
 			workoutIsActive = false
+			timer.stop()
 			stopQueries()
 			save(session: workoutSession)
 		default:
