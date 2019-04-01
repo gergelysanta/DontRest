@@ -207,6 +207,8 @@ class Workout: NSObject {
 			healthStore.stop(query)
 		}
 		activeDataQueries.removeAll()
+		// Play start sound/haptic feedback
+		WKInterfaceDevice.current().play(WKHapticType.stop)
 	}
 
 	/// Process data received from HealthKit
