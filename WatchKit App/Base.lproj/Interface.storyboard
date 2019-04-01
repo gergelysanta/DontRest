@@ -158,14 +158,17 @@
                             <fontDescription key="font" type="system" pointSize="24"/>
                         </label>
                         <timer alignment="left" id="HPN-k8-OdC">
-                            <fontDescription key="font" type="system" pointSize="24"/>
+                            <color key="textColor" name="linkColor" catalog="System" colorSpace="catalog"/>
+                            <fontDescription key="font" type="system" pointSize="27"/>
                         </timer>
                         <group width="1" alignment="left" id="9fh-j2-ybc">
                             <items>
-                                <label alignment="left" verticalAlignment="bottom" text="69" id="jGJ-m1-Keb">
+                                <label alignment="left" verticalAlignment="bottom" text="0" id="jGJ-m1-Keb">
+                                    <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                                     <fontDescription key="font" type="system" pointSize="28"/>
                                 </label>
                                 <label alignment="left" verticalAlignment="bottom" text="BPM" numberOfLines="0" id="6Tb-s7-hfN">
+                                    <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                                     <fontDescription key="font" type="system" pointSize="24"/>
                                 </label>
                             </items>
@@ -207,10 +210,40 @@
                         <outlet property="timer" destination="HPN-k8-OdC" id="NaY-Ih-T89"/>
                         <outlet property="totalEnergyGroup" destination="2aX-qT-zi6" id="ogF-s8-B1n"/>
                         <outlet property="totalEnergyLabel" destination="f0m-sI-I6D" id="bhz-Q9-SF7"/>
+                        <segue destination="qQB-jj-fy6" kind="relationship" relationship="nextPage" id="qP0-JC-g7s"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="493" y="-59"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="rXK-Kc-NXf">
+            <objects>
+                <controller id="qQB-jj-fy6">
+                    <items>
+                        <nowPlayingView alignment="left" id="XWD-R8-l1m"/>
+                    </items>
+                    <connections>
+                        <segue destination="8Gx-jR-sNN" kind="relationship" relationship="nextPage" id="kac-E8-pCK"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="736" y="-63"/>
+        </scene>
+        <!--Workout Settings Interface Controller-->
+        <scene sceneID="Yne-HU-Y0l">
+            <objects>
+                <controller id="8Gx-jR-sNN" customClass="WorkoutSettingsInterfaceController" customModule="WatchKit_Extension">
+                    <items>
+                        <switch width="1" alignment="left" value="YES" title="Warn Me!" id="8r8-7i-stT">
+                            <connections>
+                                <action selector="warnMeSwitchToggled:" destination="8Gx-jR-sNN" id="0h8-pi-F0p"/>
+                            </connections>
+                        </switch>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="977" y="-63"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

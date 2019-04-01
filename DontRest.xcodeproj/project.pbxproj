@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74221FBD224E5D80005A8A74 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74221FBC224E5D80005A8A74 /* Workout.swift */; };
+		74221FBF224E74BD005A8A74 /* HKWorkoutSessionState+description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74221FBE224E74BD005A8A74 /* HKWorkoutSessionState+description.swift */; };
+		74221FC2224EAD8E005A8A74 /* WorkoutSettingsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74221FC1224EAD8E005A8A74 /* WorkoutSettingsInterfaceController.swift */; };
 		745A611C224BD8500051CAEA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745A611B224BD8500051CAEA /* HealthKit.framework */; };
 		745A6120224BD8A30051CAEA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745A611F224BD8A30051CAEA /* HealthKit.framework */; };
 		746A5AEC2249E82C00E2FA79 /* RangedInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A5AEB2249E82C00E2FA79 /* RangedInt.swift */; };
@@ -73,6 +76,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		74221FBC224E5D80005A8A74 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		74221FBE224E74BD005A8A74 /* HKWorkoutSessionState+description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKWorkoutSessionState+description.swift"; sourceTree = "<group>"; };
+		74221FC1224EAD8E005A8A74 /* WorkoutSettingsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSettingsInterfaceController.swift; sourceTree = "<group>"; };
 		745A611B224BD8500051CAEA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		745A611D224BD8500051CAEA /* DontRest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DontRest.entitlements; sourceTree = "<group>"; };
 		745A611E224BD8A30051CAEA /* WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchKit Extension.entitlements"; sourceTree = "<group>"; };
@@ -123,6 +129,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74221FC0224E9F63005A8A74 /* Workout Session */ = {
+			isa = PBXGroup;
+			children = (
+				74221FBC224E5D80005A8A74 /* Workout.swift */,
+				74221FBE224E74BD005A8A74 /* HKWorkoutSessionState+description.swift */,
+			);
+			path = "Workout Session";
+			sourceTree = "<group>";
+		};
+		74221FE822524DA9005A8A74 /* Menu Interface */ = {
+			isa = PBXGroup;
+			children = (
+				74CDB5A322480EDD00A201F9 /* MainInterfaceController.swift */,
+				74CDB5BA22481A0300A201F9 /* SetupActivityInterfaceController.swift */,
+				74F47708224AB60600E3351C /* SetupTimesInterfaceController.swift */,
+			);
+			path = "Menu Interface";
+			sourceTree = "<group>";
+		};
+		74221FE922524DD4005A8A74 /* Workout Interface */ = {
+			isa = PBXGroup;
+			children = (
+				74CDB5BE2248B4C500A201F9 /* WorkoutInterfaceController.swift */,
+				74221FC1224EAD8E005A8A74 /* WorkoutSettingsInterfaceController.swift */,
+			);
+			path = "Workout Interface";
+			sourceTree = "<group>";
+		};
 		745A611A224BD8500051CAEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,14 +224,13 @@
 		74CDB5A222480EDD00A201F9 /* WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				745A611E224BD8A30051CAEA /* WatchKit Extension.entitlements */,
 				74CDB5A522480EDD00A201F9 /* ExtensionDelegate.swift */,
-				74CDB5A322480EDD00A201F9 /* MainInterfaceController.swift */,
-				74CDB5BA22481A0300A201F9 /* SetupActivityInterfaceController.swift */,
-				74F47708224AB60600E3351C /* SetupTimesInterfaceController.swift */,
-				74CDB5BE2248B4C500A201F9 /* WorkoutInterfaceController.swift */,
+				74221FE822524DA9005A8A74 /* Menu Interface */,
+				74221FE922524DD4005A8A74 /* Workout Interface */,
 				74CDB5A722480EDD00A201F9 /* NotificationController.swift */,
+				74221FC0224E9F63005A8A74 /* Workout Session */,
 				746A5AEA2249E7FC00E2FA79 /* Model */,
+				745A611E224BD8A30051CAEA /* WatchKit Extension.entitlements */,
 				74CDB5A922480EDE00A201F9 /* Assets.xcassets */,
 				74CDB5AB22480EDE00A201F9 /* Info.plist */,
 				74CDB5AC22480EDE00A201F9 /* PushNotificationPayload.apns */,
@@ -358,11 +391,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74221FC2224EAD8E005A8A74 /* WorkoutSettingsInterfaceController.swift in Sources */,
 				74CDB5BD2248AD4400A201F9 /* Configuration.swift in Sources */,
 				74CDB5A822480EDD00A201F9 /* NotificationController.swift in Sources */,
 				74CDB5BF2248B4C500A201F9 /* WorkoutInterfaceController.swift in Sources */,
 				74CDB5A622480EDD00A201F9 /* ExtensionDelegate.swift in Sources */,
+				74221FBF224E74BD005A8A74 /* HKWorkoutSessionState+description.swift in Sources */,
 				746A5AEE2249E86200E2FA79 /* RangedTime.swift in Sources */,
+				74221FBD224E5D80005A8A74 /* Workout.swift in Sources */,
 				74CDB5A422480EDD00A201F9 /* MainInterfaceController.swift in Sources */,
 				74F47709224AB60600E3351C /* SetupTimesInterfaceController.swift in Sources */,
 				746A5AEC2249E82C00E2FA79 /* RangedInt.swift in Sources */,
