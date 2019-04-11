@@ -59,10 +59,14 @@ class WorkoutInterfaceController: WKInterfaceController {
 		errorDisplayed = true
 	}
 
+	private func exitWorkoutInterface() {
+		WKInterfaceController.reloadRootControllers(withNames: ["MainInterface","SetupActivityInterface","SetupTimesInterface"], contexts: nil)
+	}
+
 	@IBAction func endButtonTapped() {
 		if errorDisplayed {
-			// We have an error displayed, simply dismiss this view
-			dismiss()
+			// We have an error displayed, pushing 'End' means - go back to main interface
+			exitWorkoutInterface()
 		} else {
 			// A workout session is running
 			Workout.shared.stop()
@@ -81,7 +85,7 @@ extension WorkoutInterfaceController: WorkoutDelegate {
 
 	func workoutDidStop(_ workout: Workout) {
 		timer.stop()
-		dismiss()
+		exitWorkoutInterface()
 	}
 
 	func workout(_ workout: Workout, valueChanged: Workout.ValueType) {

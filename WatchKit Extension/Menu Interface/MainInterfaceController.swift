@@ -26,4 +26,8 @@ class MainInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+	@IBAction func startButtonPressed() {
+		WKInterfaceController.reloadRootControllers(withNames: ["WorkoutMainController","WorkoutMusicController","WorkoutWarningsController"], contexts: nil)
+	}
+
 }

@@ -11,13 +11,13 @@
         <!--Don't Rest!-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="MainInterface" title="Don't Rest!" id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="WatchKit_Extension">
+                <controller identifier="MainInterface" title="Don't Rest!" fullBounds="YES" id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="WatchKit_Extension">
                     <items>
-                        <button width="1" height="0.5" alignment="left" title="Start Workout" id="WRj-hM-uhZ">
+                        <button width="1" height="0.5" alignment="left" verticalAlignment="center" title="Start Workout" id="WRj-hM-uhZ">
                             <color key="backgroundColor" red="0.1765111094" green="0.68014355959999995" blue="0.51195098959999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" type="system" pointSize="20"/>
                             <connections>
-                                <segue destination="JUj-1I-NbI" kind="modal" id="htp-Go-mUe"/>
+                                <action selector="startButtonPressed" destination="AgC-eL-Hgc" id="z1B-2e-lDO"/>
                             </connections>
                         </button>
                     </items>
@@ -152,7 +152,7 @@
         <!--Workout-->
         <scene sceneID="eq3-JI-sxe">
             <objects>
-                <controller identifier="WorkoutInterface" title="Workout" id="JUj-1I-NbI" customClass="WorkoutInterfaceController" customModule="WatchKit_Extension">
+                <controller identifier="WorkoutMainController" title="Workout" id="JUj-1I-NbI" customClass="WorkoutInterfaceController" customModule="WatchKit_Extension">
                     <items>
                         <label alignment="left" hidden="YES" text="--error--" numberOfLines="0" id="wH0-Vt-UMi">
                             <fontDescription key="font" type="system" pointSize="24"/>
@@ -216,12 +216,12 @@
             </objects>
             <point key="canvasLocation" x="493" y="-59"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Music-->
         <scene sceneID="rXK-Kc-NXf">
             <objects>
-                <controller id="qQB-jj-fy6">
+                <controller identifier="WorkoutMusicController" title="Music" id="qQB-jj-fy6">
                     <items>
-                        <nowPlayingView alignment="left" id="XWD-R8-l1m"/>
+                        <nowPlayingView alignment="left" semanticContentAttribute="playback" id="XWD-R8-l1m"/>
                     </items>
                     <connections>
                         <segue destination="8Gx-jR-sNN" kind="relationship" relationship="nextPage" id="kac-E8-pCK"/>
@@ -230,10 +230,10 @@
             </objects>
             <point key="canvasLocation" x="736" y="-63"/>
         </scene>
-        <!--Workout Settings Interface Controller-->
+        <!--Warnings-->
         <scene sceneID="Yne-HU-Y0l">
             <objects>
-                <controller id="8Gx-jR-sNN" customClass="WorkoutSettingsInterfaceController" customModule="WatchKit_Extension">
+                <controller identifier="WorkoutWarningsController" title="Warnings" id="8Gx-jR-sNN" customClass="WorkoutSettingsInterfaceController" customModule="WatchKit_Extension">
                     <items>
                         <switch width="1" alignment="left" value="YES" title="Warn Me!" id="8r8-7i-stT">
                             <connections>
