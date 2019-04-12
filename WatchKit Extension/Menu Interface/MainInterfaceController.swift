@@ -12,8 +12,22 @@ import HealthKit
 
 class MainInterfaceController: WKInterfaceController {
 
+	@IBOutlet weak var workoutsTable: WKInterfaceTable!
+
 	override func awake(withContext context: Any?) {
-        super.awake(withContext: context)		
+        super.awake(withContext: context)
+
+		// Populate the workouts table
+		let activities = Configuration.shared.activities
+		workoutsTable.setNumberOfRows(activities.count, withRowType: "WorkoutRow")
+
+		for index in 0 ..< activities.count {
+			guard let rowController = workoutsTable.rowController(at: index) as? WorkoutRowController else { continue }
+
+			rowController.workoutNameLabel.setText("\(activities[index].name)")
+			rowController.rowIndex = index
+			rowController.delegate = self
+		}
 	}
 
     override func willActivate() {
@@ -26,8 +40,37 @@ class MainInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
-	@IBAction func startButtonPressed() {
-		WKInterfaceController.reloadRootControllers(withNames: ["WorkoutMainController","WorkoutMusicController","WorkoutWarningsController"], contexts: nil)
+	override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+		guard
+			table == workoutsTable,
+			rowIndex < Configuration.shared.activities.count
+		else { return }
+
+		let activity = Configuration.shared.activities[rowIndex].configuration
+		WKInterfaceController.reloadRootControllers(withNames: ["WorkoutMainController","WorkoutMusicController","WorkoutWarningsController"],
+													contexts: [activity, activity, activity])
+	}
+
+}
+
+extension MainInterfaceController: WorkoutRowDelegate {
+
+	func workoutSettingsTapped(row index: Int) {
+		guard index >= 0, index < Configuration.shared.activities.count else { return }
+
+		// Get activity for triggered row
+		let activity = Configuration.shared.activities[index].configuration
+
+		// Detect controllers for activity type
+		var controllerNames:[String] = []
+		if activity is SetsWorkoutConfiguration {
+			controllerNames = ["WorkoutSetsConfiguration", "WorkoutTimesConfiguration"]
+		}
+
+		// Present controllers
+		if !controllerNames.isEmpty {
+			presentController(withNames: controllerNames, contexts: [activity, activity])
+		}
 	}
 
 }

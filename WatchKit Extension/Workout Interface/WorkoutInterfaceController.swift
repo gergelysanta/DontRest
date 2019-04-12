@@ -34,7 +34,7 @@ class WorkoutInterfaceController: WKInterfaceController {
 		}
 
 		Workout.shared.delegate = self
-		Workout.shared.start(withActivity: Configuration.shared.activity)
+		Workout.shared.start(withActivity: Configuration.shared.activity.configuration.type)
     }
 
     override func willActivate() {
@@ -60,7 +60,7 @@ class WorkoutInterfaceController: WKInterfaceController {
 	}
 
 	private func exitWorkoutInterface() {
-		WKInterfaceController.reloadRootControllers(withNames: ["MainInterface","SetupActivityInterface","SetupTimesInterface"], contexts: nil)
+		WKInterfaceController.reloadRootControllers(withNames: ["MainInterface"], contexts: nil)
 	}
 
 	@IBAction func endButtonTapped() {

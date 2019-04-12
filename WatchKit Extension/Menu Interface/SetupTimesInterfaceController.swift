@@ -17,37 +17,49 @@ class SetupTimesInterfaceController: WKInterfaceController {
 	@IBOutlet var restExercisesMinutePicker: WKInterfacePicker!
 	@IBOutlet var restExercisesSecondsPicker: WKInterfacePicker!
 
-	private var minutesValue:Int = Configuration.shared.restBetweenSets.seconds / 60
-	private var secondsValue:Int = Configuration.shared.restBetweenSets.seconds % 60
+	private var minutesValue:Int = 0
+	private var secondsValue:Int = 0
+
+	private var activityConfiguration:SetsWorkoutConfiguration! {
+		didSet {
+			minutesValue = activityConfiguration.restBetweenSets.seconds / 60
+			secondsValue = activityConfiguration.restBetweenSets.seconds % 60
+		}
+	}
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
 
-		let configuration = Configuration.shared
+		if let configuration = context as? SetsWorkoutConfiguration {
+			activityConfiguration = configuration
+		} else {
+			dismiss()
+			return
+		}
 
 		// Fill up rest minutes picker with values
 		var minutesItems = [WKPickerItem]()
-		for minute in configuration.restBetweenSets.availableMinutes {
+		for minute in activityConfiguration.restBetweenSets.availableMinutes {
 			let item = WKPickerItem()
 			item.title = "\(minute)"
 			minutesItems.append(item)
 		}
 		restSetsTimeMinutesPicker.setItems(minutesItems)
-		restSetsTimeMinutesPicker.setSelectedItemIndex(configuration.restBetweenSets.minutesIndex)
+		restSetsTimeMinutesPicker.setSelectedItemIndex(activityConfiguration.restBetweenSets.minutesIndex)
 		restExercisesMinutePicker.setItems(minutesItems)
-		restExercisesMinutePicker.setSelectedItemIndex(configuration.restBetweenExercises.minutesIndex)
+		restExercisesMinutePicker.setSelectedItemIndex(activityConfiguration.restBetweenExercises.minutesIndex)
 
 		// Fill up rest seconds picker with values
 		var secondsItems = [WKPickerItem]()
-		for seconds in configuration.restBetweenSets.availableSeconds {
+		for seconds in activityConfiguration.restBetweenSets.availableSeconds {
 			let item = WKPickerItem()
 			item.title = String(format: "%02d", seconds)
 			secondsItems.append(item)
 		}
 		restSetsTimeSecondsPicker.setItems(secondsItems)
-		restSetsTimeSecondsPicker.setSelectedItemIndex(configuration.restBetweenSets.secondsIndex)
+		restSetsTimeSecondsPicker.setSelectedItemIndex(activityConfiguration.restBetweenSets.secondsIndex)
 		restExercisesSecondsPicker.setItems(secondsItems)
-		restExercisesSecondsPicker.setSelectedItemIndex(configuration.restBetweenExercises.secondsIndex)
+		restExercisesSecondsPicker.setSelectedItemIndex(activityConfiguration.restBetweenExercises.secondsIndex)
     }
 
     override func willActivate() {
@@ -63,53 +75,53 @@ class SetupTimesInterfaceController: WKInterfaceController {
 	// MARK: - Rest between sets time counter
 
 	@IBAction func increaseSetsRestTimeButtonTapped() {
-		Configuration.shared.restBetweenSets.seconds += 5
-		let storedSeconds = Configuration.shared.restBetweenSets.seconds
-		restSetsTimeMinutesPicker.setSelectedItemIndex(Configuration.shared.restBetweenSets.minutesIndex)
-		Configuration.shared.restBetweenSets.seconds = storedSeconds
-		restSetsTimeSecondsPicker.setSelectedItemIndex(Configuration.shared.restBetweenSets.secondsIndex)
+		activityConfiguration.restBetweenSets.seconds += 5
+		let storedSeconds = activityConfiguration.restBetweenSets.seconds
+		restSetsTimeMinutesPicker.setSelectedItemIndex(activityConfiguration.restBetweenSets.minutesIndex)
+		activityConfiguration.restBetweenSets.seconds = storedSeconds
+		restSetsTimeSecondsPicker.setSelectedItemIndex(activityConfiguration.restBetweenSets.secondsIndex)
 	}
 
 	@IBAction func decreaseSetsRestTimeButtonTapped() {
-		Configuration.shared.restBetweenSets.seconds -= 5
-		let storedSeconds = Configuration.shared.restBetweenSets.seconds
-		restSetsTimeMinutesPicker.setSelectedItemIndex(Configuration.shared.restBetweenSets.minutesIndex)
-		Configuration.shared.restBetweenSets.seconds = storedSeconds
-		restSetsTimeSecondsPicker.setSelectedItemIndex(Configuration.shared.restBetweenSets.secondsIndex)
+		activityConfiguration.restBetweenSets.seconds -= 5
+		let storedSeconds = activityConfiguration.restBetweenSets.seconds
+		restSetsTimeMinutesPicker.setSelectedItemIndex(activityConfiguration.restBetweenSets.minutesIndex)
+		activityConfiguration.restBetweenSets.seconds = storedSeconds
+		restSetsTimeSecondsPicker.setSelectedItemIndex(activityConfiguration.restBetweenSets.secondsIndex)
 	}
 
 	@IBAction func restSetsMinutesValueChanged(_ value: Int) {
-		Configuration.shared.restBetweenSets.minutesIndex = value
+		activityConfiguration.restBetweenSets.minutesIndex = value
 	}
 
 	@IBAction func restSetsSecondsValueChanged(_ value: Int) {
-		Configuration.shared.restBetweenSets.secondsIndex = value
+		activityConfiguration.restBetweenSets.secondsIndex = value
 	}
 
 	// MARK: - Rest between exercises time counter
 
 	@IBAction func increaseExercisesRestTimeButtonTapped() {
-		Configuration.shared.restBetweenExercises.seconds += 5
-		let storedSeconds = Configuration.shared.restBetweenExercises.seconds
-		restExercisesMinutePicker.setSelectedItemIndex(Configuration.shared.restBetweenExercises.minutesIndex)
-		Configuration.shared.restBetweenExercises.seconds = storedSeconds
-		restExercisesSecondsPicker.setSelectedItemIndex(Configuration.shared.restBetweenExercises.secondsIndex)
+		activityConfiguration.restBetweenExercises.seconds += 5
+		let storedSeconds = activityConfiguration.restBetweenExercises.seconds
+		restExercisesMinutePicker.setSelectedItemIndex(activityConfiguration.restBetweenExercises.minutesIndex)
+		activityConfiguration.restBetweenExercises.seconds = storedSeconds
+		restExercisesSecondsPicker.setSelectedItemIndex(activityConfiguration.restBetweenExercises.secondsIndex)
 	}
 
 	@IBAction func decreaseExercisesRestTimeButtonTapped() {
-		Configuration.shared.restBetweenExercises.seconds -= 5
-		let storedSeconds = Configuration.shared.restBetweenExercises.seconds
-		restExercisesMinutePicker.setSelectedItemIndex(Configuration.shared.restBetweenExercises.minutesIndex)
-		Configuration.shared.restBetweenExercises.seconds = storedSeconds
-		restExercisesSecondsPicker.setSelectedItemIndex(Configuration.shared.restBetweenExercises.secondsIndex)
+		activityConfiguration.restBetweenExercises.seconds -= 5
+		let storedSeconds = activityConfiguration.restBetweenExercises.seconds
+		restExercisesMinutePicker.setSelectedItemIndex(activityConfiguration.restBetweenExercises.minutesIndex)
+		activityConfiguration.restBetweenExercises.seconds = storedSeconds
+		restExercisesSecondsPicker.setSelectedItemIndex(activityConfiguration.restBetweenExercises.secondsIndex)
 	}
 
 	@IBAction func restExercisesMinutesValueChanged(_ value: Int) {
-		Configuration.shared.restBetweenExercises.minutesIndex = value
+		activityConfiguration.restBetweenExercises.minutesIndex = value
 	}
 
 	@IBAction func restExercisesSecondsValueChanged(_ value: Int) {
-		Configuration.shared.restBetweenExercises.secondsIndex = value
+		activityConfiguration.restBetweenExercises.secondsIndex = value
 	}
 
 }

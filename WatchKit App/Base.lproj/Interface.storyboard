@@ -11,36 +11,49 @@
         <!--Don't Rest!-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="MainInterface" title="Don't Rest!" fullBounds="YES" id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="WatchKit_Extension">
+                <controller identifier="MainInterface" title="Don't Rest!" id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="WatchKit_Extension">
                     <items>
-                        <button width="1" height="0.5" alignment="left" verticalAlignment="center" title="Start Workout" id="WRj-hM-uhZ">
-                            <color key="backgroundColor" red="0.1765111094" green="0.68014355959999995" blue="0.51195098959999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="font" type="system" pointSize="20"/>
-                            <connections>
-                                <action selector="startButtonPressed" destination="AgC-eL-Hgc" id="z1B-2e-lDO"/>
-                            </connections>
-                        </button>
+                        <table alignment="left" id="PWJ-De-jbH">
+                            <items>
+                                <tableRow identifier="WorkoutRow" id="Tsr-Un-LRB" customClass="WorkoutRowController" customModule="WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" spacing="6" id="X9i-EX-6za">
+                                        <items>
+                                            <label alignment="left" text="Label" id="xhV-uO-xm5">
+                                                <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
+                                            </label>
+                                            <button alignment="right" id="DzU-tR-ryo">
+                                                <group key="contentGroup" alignment="left" id="K2o-79-tfL">
+                                                    <items>
+                                                        <imageView width="24" height="24" alignment="left" image="SettingsIcon" contentMode="center" id="eI3-oA-EGh"/>
+                                                    </items>
+                                                </group>
+                                                <connections>
+                                                    <action selector="workoutSettingsButtonTapped" destination="Tsr-Un-LRB" id="vBx-0s-J4A"/>
+                                                </connections>
+                                            </button>
+                                        </items>
+                                        <color key="backgroundColor" red="0.41176470590000003" green="0.82352941180000006" blue="0.87450980389999999" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <edgeInsets key="margins" left="6" right="6" top="6" bottom="6"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="workoutNameLabel" destination="xhV-uO-xm5" id="epC-sH-cdC"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
                     <connections>
-                        <segue destination="HW1-nu-tJI" kind="relationship" relationship="nextPage" id="EXB-Ab-74M"/>
+                        <outlet property="workoutsTable" destination="PWJ-De-jbH" id="u9n-wJ-DqE"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="292"/>
         </scene>
-        <!--Activity-->
+        <!--Workout Sets Configuration-->
         <scene sceneID="ikU-kq-pse">
             <objects>
-                <controller identifier="SetupActivityInterface" title="Activity" id="HW1-nu-tJI" customClass="SetupActivityInterfaceController" customModule="WatchKit_Extension">
+                <controller identifier="WorkoutSetsConfiguration" title="Close" id="HW1-nu-tJI" userLabel="Workout Sets Configuration" customClass="SetupActivityInterfaceController" customModule="WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Activity type:" id="zZU-7f-Up4">
-                            <fontDescription key="font" type="system" pointSize="11"/>
-                        </label>
-                        <picker height="60" alignment="left" focusStyle="stack" id="FRt-jW-H0z">
-                            <connections>
-                                <action selector="activityPickerChanged:" destination="HW1-nu-tJI" id="Gfv-4u-ayd"/>
-                            </connections>
-                        </picker>
                         <label alignment="left" text="Sets:" id="dDl-C0-Lzy">
                             <fontDescription key="font" type="system" pointSize="10"/>
                         </label>
@@ -67,7 +80,6 @@
                         </group>
                     </items>
                     <connections>
-                        <outlet property="activityPicker" destination="FRt-jW-H0z" id="W0w-vu-pYL"/>
                         <outlet property="setsCountPicker" destination="pXa-9y-S4h" id="vxv-Yz-pCr"/>
                         <segue destination="91P-c4-Kfw" kind="relationship" relationship="nextPage" id="j2k-QI-nru"/>
                     </connections>
@@ -75,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="493" y="292"/>
         </scene>
-        <!--Times-->
+        <!--Workout Times Configuration-->
         <scene sceneID="OZQ-Ri-SjX">
             <objects>
-                <controller identifier="SetupTimesInterface" title="Times" id="91P-c4-Kfw" customClass="SetupTimesInterfaceController" customModule="WatchKit_Extension">
+                <controller identifier="WorkoutTimesConfiguration" title="Close" id="91P-c4-Kfw" userLabel="Workout Times Configuration" customClass="SetupTimesInterfaceController" customModule="WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Rest between sets:" id="Ixv-Ma-Ddb">
                             <fontDescription key="font" type="system" pointSize="10"/>

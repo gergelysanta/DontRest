@@ -12,31 +12,29 @@ import HealthKit
 
 class SetupActivityInterfaceController: WKInterfaceController {
 
-	@IBOutlet var activityPicker: WKInterfacePicker!
 	@IBOutlet var setsCountPicker: WKInterfacePicker!
+
+	private var activityConfiguration:SetsWorkoutConfiguration!
 
 	override func awake(withContext context: Any?) {
         super.awake(withContext: context)
 
-		// Fill up activities selector
-        var activityItems = [WKPickerItem]()
-		for activity in Configuration.shared.availableActivities {
-			let item = WKPickerItem()
-			item.title = activity.name
-			activityItems.append(item)
+		if let configuration = context as? SetsWorkoutConfiguration {
+			activityConfiguration = configuration
+		} else {
+			dismiss()
+			return
 		}
-		activityPicker.setItems(activityItems)
-		activityPicker.setSelectedItemIndex(Configuration.shared.activityIndex)
 
 		// Fill up "Sets" picker with values
 		var setsItems = [WKPickerItem]()
-		for count in Configuration.shared.sets.availableValues {
+		for count in activityConfiguration.sets.availableValues {
 			let item = WKPickerItem()
 			item.title = "\(count)"
 			setsItems.append(item)
 		}
 		setsCountPicker.setItems(setsItems)
-		setsCountPicker.setSelectedItemIndex(Configuration.shared.sets.valueIndex)
+		setsCountPicker.setSelectedItemIndex(activityConfiguration.sets.valueIndex)
     }
 
     override func willActivate() {
@@ -49,26 +47,20 @@ class SetupActivityInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
-	// MARK: - Activities selector
-
-	@IBAction func activityPickerChanged(_ value: Int) {
-		Configuration.shared.activityIndex = value
-	}
-	
 	// MARK: - Sets counter
 
 	@IBAction func increaseSetsButtonTapped() {
-		Configuration.shared.sets.value += 1
-		setsCountPicker.setSelectedItemIndex(Configuration.shared.sets.valueIndex)
+		activityConfiguration.sets.value += 1
+		setsCountPicker.setSelectedItemIndex(activityConfiguration.sets.valueIndex)
 	}
 
 	@IBAction func decreaseSetsButtonTapped() {
-		Configuration.shared.sets.value -= 1
-		setsCountPicker.setSelectedItemIndex(Configuration.shared.sets.valueIndex)
+		activityConfiguration.sets.value -= 1
+		setsCountPicker.setSelectedItemIndex(activityConfiguration.sets.valueIndex)
 	}
 
 	@IBAction func setsPickerValueChanged(_ value: Int) {
-		Configuration.shared.sets.valueIndex = value
+		activityConfiguration.sets.valueIndex = value
 	}
 
 }
