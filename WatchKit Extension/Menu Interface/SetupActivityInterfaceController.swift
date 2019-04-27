@@ -50,12 +50,12 @@ class SetupActivityInterfaceController: WKInterfaceController {
 	// MARK: - Sets counter
 
 	@IBAction func increaseSetsButtonTapped() {
-		activityConfiguration.sets.value += 1
+		activityConfiguration.sets.rawValue += 1
 		setsCountPicker.setSelectedItemIndex(activityConfiguration.sets.valueIndex)
 	}
 
 	@IBAction func decreaseSetsButtonTapped() {
-		activityConfiguration.sets.value -= 1
+		activityConfiguration.sets.rawValue -= 1
 		setsCountPicker.setSelectedItemIndex(activityConfiguration.sets.valueIndex)
 	}
 

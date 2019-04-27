@@ -12,7 +12,7 @@ class RangedInt {
 
 	let availableValues:[Int] = Array(1...99)
 
-	var value:Int = 1 {
+	var rawValue:Int = 1 {
 		didSet {
 			guard
 				let lowestValue = availableValues.first,
@@ -20,36 +20,36 @@ class RangedInt {
 				else {
 					return
 			}
-			if value < lowestValue {
-				value = lowestValue
+			if rawValue < lowestValue {
+				rawValue = lowestValue
 			}
-			else if value > highestValue {
-				value = highestValue
+			else if rawValue > highestValue {
+				rawValue = highestValue
 			}
 		}
 	}
 
 	var valueIndex:Int {
 		get {
-			if let index = availableValues.firstIndex(of: value) {
+			if let index = availableValues.firstIndex(of: rawValue) {
 				return Int(index)
 			}
 			return 0
 		}
 		set {
 			if (newValue >= 0) && (newValue < availableValues.count) {
-				value = availableValues[newValue]
+				rawValue = availableValues[newValue]
 				#if DEBUG
-				NSLog("RangedInt: \(value)")
+				NSLog("RangedInt: \(rawValue)")
 				#endif
 			}
 		}
 	}
 
-	init(value: Int) {
-		self.value = value
+	init(rawValue: Int) {
+		self.rawValue = rawValue
 		#if DEBUG
-		NSLog("RangedInt: \(self.value)")
+		NSLog("RangedInt: \(self.rawValue)")
 		#endif
 	}
 

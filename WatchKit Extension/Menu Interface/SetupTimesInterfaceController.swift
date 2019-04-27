@@ -22,8 +22,8 @@ class SetupTimesInterfaceController: WKInterfaceController {
 
 	private var activityConfiguration:SetsWorkoutConfiguration! {
 		didSet {
-			minutesValue = activityConfiguration.restBetweenSets.seconds / 60
-			secondsValue = activityConfiguration.restBetweenSets.seconds % 60
+			minutesValue = activityConfiguration.restBetweenSets.rawValue / 60
+			secondsValue = activityConfiguration.restBetweenSets.rawValue % 60
 		}
 	}
 
@@ -75,18 +75,18 @@ class SetupTimesInterfaceController: WKInterfaceController {
 	// MARK: - Rest between sets time counter
 
 	@IBAction func increaseSetsRestTimeButtonTapped() {
-		activityConfiguration.restBetweenSets.seconds += 5
-		let storedSeconds = activityConfiguration.restBetweenSets.seconds
+		activityConfiguration.restBetweenSets.rawValue += 5
+		let storedSeconds = activityConfiguration.restBetweenSets.rawValue
 		restSetsTimeMinutesPicker.setSelectedItemIndex(activityConfiguration.restBetweenSets.minutesIndex)
-		activityConfiguration.restBetweenSets.seconds = storedSeconds
+		activityConfiguration.restBetweenSets.rawValue = storedSeconds
 		restSetsTimeSecondsPicker.setSelectedItemIndex(activityConfiguration.restBetweenSets.secondsIndex)
 	}
 
 	@IBAction func decreaseSetsRestTimeButtonTapped() {
-		activityConfiguration.restBetweenSets.seconds -= 5
-		let storedSeconds = activityConfiguration.restBetweenSets.seconds
+		activityConfiguration.restBetweenSets.rawValue -= 5
+		let storedSeconds = activityConfiguration.restBetweenSets.rawValue
 		restSetsTimeMinutesPicker.setSelectedItemIndex(activityConfiguration.restBetweenSets.minutesIndex)
-		activityConfiguration.restBetweenSets.seconds = storedSeconds
+		activityConfiguration.restBetweenSets.rawValue = storedSeconds
 		restSetsTimeSecondsPicker.setSelectedItemIndex(activityConfiguration.restBetweenSets.secondsIndex)
 	}
 
@@ -101,18 +101,18 @@ class SetupTimesInterfaceController: WKInterfaceController {
 	// MARK: - Rest between exercises time counter
 
 	@IBAction func increaseExercisesRestTimeButtonTapped() {
-		activityConfiguration.restBetweenExercises.seconds += 5
-		let storedSeconds = activityConfiguration.restBetweenExercises.seconds
+		activityConfiguration.restBetweenExercises.rawValue += 5
+		let storedSeconds = activityConfiguration.restBetweenExercises.rawValue
 		restExercisesMinutePicker.setSelectedItemIndex(activityConfiguration.restBetweenExercises.minutesIndex)
-		activityConfiguration.restBetweenExercises.seconds = storedSeconds
+		activityConfiguration.restBetweenExercises.rawValue = storedSeconds
 		restExercisesSecondsPicker.setSelectedItemIndex(activityConfiguration.restBetweenExercises.secondsIndex)
 	}
 
 	@IBAction func decreaseExercisesRestTimeButtonTapped() {
-		activityConfiguration.restBetweenExercises.seconds -= 5
-		let storedSeconds = activityConfiguration.restBetweenExercises.seconds
+		activityConfiguration.restBetweenExercises.rawValue -= 5
+		let storedSeconds = activityConfiguration.restBetweenExercises.rawValue
 		restExercisesMinutePicker.setSelectedItemIndex(activityConfiguration.restBetweenExercises.minutesIndex)
-		activityConfiguration.restBetweenExercises.seconds = storedSeconds
+		activityConfiguration.restBetweenExercises.rawValue = storedSeconds
 		restExercisesSecondsPicker.setSelectedItemIndex(activityConfiguration.restBetweenExercises.secondsIndex)
 	}
 

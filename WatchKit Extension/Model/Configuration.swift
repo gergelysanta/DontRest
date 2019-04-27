@@ -24,7 +24,16 @@ class Configuration {
 	]
 
 	/// Selected activity
-	var activity:Activity
+	var activity:Activity {
+		didSet {
+			// Get index of newly selected activity
+			guard let fromIndex = activities.firstIndex(where: {$0.name == activity.name }) else { return }
+			// Remove it from array of activities...
+			let entry = activities.remove(at: fromIndex)
+			// ..and add back to the beginning
+			activities.insert(entry, at: 0)
+		}
+	}
 
 	private init() {
 		activity = activities.first!

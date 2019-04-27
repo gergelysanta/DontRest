@@ -46,9 +46,14 @@ class MainInterfaceController: WKInterfaceController {
 			rowIndex < Configuration.shared.activities.count
 		else { return }
 
-		let activity = Configuration.shared.activities[rowIndex].configuration
+		// Fetch selected activity
+		let activity = Configuration.shared.activities[rowIndex]
+		let configuration = activity.configuration
+		// Set it as new selected activity
+		Configuration.shared.activity = activity
+		// And start workout
 		WKInterfaceController.reloadRootControllers(withNames: ["WorkoutMainController","WorkoutMusicController","WorkoutWarningsController"],
-													contexts: [activity, activity, activity])
+													contexts: [configuration, configuration, configuration])
 	}
 
 }
