@@ -23,8 +23,10 @@ class MainInterfaceController: WKInterfaceController {
 
 		for index in 0 ..< activities.count {
 			guard let rowController = workoutsTable.rowController(at: index) as? WorkoutRowController else { continue }
+			let lastActivityLength = activities[index].configuration.length
 
-			rowController.workoutNameLabel.setText("\(activities[index].name)")
+			rowController.workoutNameLabel.setText("\(activities[index].name.uppercased())")
+			rowController.workoutLastTimeLabel.setText((lastActivityLength > 0) ? String(fromSeconds: lastActivityLength) : "")
 			rowController.rowIndex = index
 			rowController.delegate = self
 		}

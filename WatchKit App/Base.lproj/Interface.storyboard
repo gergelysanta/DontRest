@@ -16,26 +16,37 @@
                         <table alignment="left" id="PWJ-De-jbH">
                             <items>
                                 <tableRow identifier="WorkoutRow" id="Tsr-Un-LRB" customClass="WorkoutRowController" customModule="WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" spacing="6" id="X9i-EX-6za">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" spacing="6" id="M3F-M7-yvD" userLabel="Main Group">
                                         <items>
-                                            <label alignment="left" text="Label" id="xhV-uO-xm5">
-                                                <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
-                                            </label>
+                                            <group alignment="left" layout="vertical" spacing="6" id="X9i-EX-6za" userLabel="Title Group">
+                                                <items>
+                                                    <label alignment="left" text="Label" id="xhV-uO-xm5">
+                                                        <fontDescription key="font" type="boldSystem" pointSize="18"/>
+                                                    </label>
+                                                    <label alignment="left" text="Last time" id="FPP-VP-djI">
+                                                        <color key="textColor" red="0.78308304542188345" green="0.87715178729999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" type="system" pointSize="14"/>
+                                                    </label>
+                                                </items>
+                                                <edgeInsets key="margins" left="4" right="0.0" top="0.0" bottom="0.0"/>
+                                            </group>
                                             <button alignment="right" id="DzU-tR-ryo">
-                                                <group key="contentGroup" alignment="left" id="K2o-79-tfL">
+                                                <group key="contentGroup" height="44" alignment="left" id="K2o-79-tfL">
                                                     <items>
-                                                        <imageView width="24" height="24" alignment="left" image="SettingsIcon" contentMode="center" id="eI3-oA-EGh"/>
+                                                        <imageView alignment="left" image="SettingsIcon" contentMode="topRight" id="eI3-oA-EGh"/>
                                                     </items>
+                                                    <edgeInsets key="margins" left="4" right="4" top="4" bottom="4"/>
                                                 </group>
                                                 <connections>
                                                     <action selector="workoutSettingsButtonTapped" destination="Tsr-Un-LRB" id="vBx-0s-J4A"/>
                                                 </connections>
                                             </button>
                                         </items>
-                                        <color key="backgroundColor" red="0.41176470590000003" green="0.82352941180000006" blue="0.87450980389999999" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.38671129939999999" green="0.67728340629999995" blue="0.94738441709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <edgeInsets key="margins" left="6" right="6" top="6" bottom="6"/>
                                     </group>
                                     <connections>
+                                        <outlet property="workoutLastTimeLabel" destination="FPP-VP-djI" id="d5x-5R-GRh"/>
                                         <outlet property="workoutNameLabel" destination="xhV-uO-xm5" id="epC-sH-cdC"/>
                                     </connections>
                                 </tableRow>

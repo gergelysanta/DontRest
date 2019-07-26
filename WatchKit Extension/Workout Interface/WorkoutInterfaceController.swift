@@ -83,8 +83,13 @@ extension WorkoutInterfaceController: WorkoutDelegate {
 		timer.start()
 	}
 
-	func workoutDidStop(_ workout: Workout) {
+	func workoutDidStop(_ workout: Workout, seconds: TimeInterval) {
 		timer.stop()
+		// Remember activity length
+		// As active workout was moved to the beginning of the array when started,
+		// we may rely on that (first one is the actually stopped one)
+		Configuration.shared.activities.first?.configuration.length = UInt(seconds)
+		// Exit workout interface
 		exitWorkoutInterface()
 	}
 

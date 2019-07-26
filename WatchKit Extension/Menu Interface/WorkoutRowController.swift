@@ -15,7 +15,8 @@ protocol WorkoutRowDelegate: AnyObject {
 class WorkoutRowController: NSObject {
 
 	@IBOutlet var workoutNameLabel: WKInterfaceLabel!
-
+	@IBOutlet var workoutLastTimeLabel: WKInterfaceLabel!
+	
 	weak var delegate: WorkoutRowDelegate?
 	var rowIndex:Int = 0
 

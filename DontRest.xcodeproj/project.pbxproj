@@ -14,6 +14,7 @@
 		745A6120224BD8A30051CAEA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745A611F224BD8A30051CAEA /* HealthKit.framework */; };
 		746A5AEC2249E82C00E2FA79 /* RangedInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A5AEB2249E82C00E2FA79 /* RangedInt.swift */; };
 		746A5AEE2249E86200E2FA79 /* RangedTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A5AED2249E86200E2FA79 /* RangedTime.swift */; };
+		746B447D22EB206B003EC474 /* String+initFromSeconds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746B447C22EB206B003EC474 /* String+initFromSeconds.swift */; };
 		74C6ED2822606E5300F8D487 /* BaseWorkoutConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6ED2722606E5300F8D487 /* BaseWorkoutConfiguration.swift */; };
 		74C6ED2A22606E8000F8D487 /* SetsWorkoutConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6ED2922606E8000F8D487 /* SetsWorkoutConfiguration.swift */; };
 		74CDB58122480EDB00A201F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB58022480EDB00A201F9 /* AppDelegate.swift */; };
@@ -88,6 +89,7 @@
 		745A611F224BD8A30051CAEA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		746A5AEB2249E82C00E2FA79 /* RangedInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangedInt.swift; sourceTree = "<group>"; };
 		746A5AED2249E86200E2FA79 /* RangedTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangedTime.swift; sourceTree = "<group>"; };
+		746B447C22EB206B003EC474 /* String+initFromSeconds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+initFromSeconds.swift"; sourceTree = "<group>"; };
 		74C6ED2722606E5300F8D487 /* BaseWorkoutConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWorkoutConfiguration.swift; sourceTree = "<group>"; };
 		74C6ED2922606E8000F8D487 /* SetsWorkoutConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsWorkoutConfiguration.swift; sourceTree = "<group>"; };
 		74CDB57D22480EDB00A201F9 /* DontRest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DontRest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				74221FBC224E5D80005A8A74 /* Workout.swift */,
-				74221FBE224E74BD005A8A74 /* HKWorkoutSessionState+description.swift */,
 			);
 			path = "Workout Session";
 			sourceTree = "<group>";
@@ -183,6 +184,15 @@
 				746A5AED2249E86200E2FA79 /* RangedTime.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		746B447B22EB2049003EC474 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				746B447C22EB206B003EC474 /* String+initFromSeconds.swift */,
+				74221FBE224E74BD005A8A74 /* HKWorkoutSessionState+description.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		74CDB57422480EDB00A201F9 = {
@@ -239,6 +249,7 @@
 				74CDB5A722480EDD00A201F9 /* NotificationController.swift */,
 				74221FC0224E9F63005A8A74 /* Workout Session */,
 				746A5AEA2249E7FC00E2FA79 /* Model */,
+				746B447B22EB2049003EC474 /* Extensions */,
 				745A611E224BD8A30051CAEA /* WatchKit Extension.entitlements */,
 				74CDB5A922480EDE00A201F9 /* Assets.xcassets */,
 				74CDB5AB22480EDE00A201F9 /* Info.plist */,
@@ -404,6 +415,7 @@
 				74CDB5BD2248AD4400A201F9 /* Configuration.swift in Sources */,
 				74CDB5A822480EDD00A201F9 /* NotificationController.swift in Sources */,
 				74CDB5BF2248B4C500A201F9 /* WorkoutInterfaceController.swift in Sources */,
+				746B447D22EB206B003EC474 /* String+initFromSeconds.swift in Sources */,
 				74CDB5A622480EDD00A201F9 /* ExtensionDelegate.swift in Sources */,
 				74221FBF224E74BD005A8A74 /* HKWorkoutSessionState+description.swift in Sources */,
 				746A5AEE2249E86200E2FA79 /* RangedTime.swift in Sources */,

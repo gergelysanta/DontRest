@@ -12,7 +12,7 @@ import WatchKit
 
 protocol WorkoutDelegate: AnyObject {
 	func workoutDidStart(_ workout: Workout)
-	func workoutDidStop(_ workout: Workout)
+	func workoutDidStop(_ workout: Workout, seconds: TimeInterval)
 	func workout(_ workout: Workout, errorReceived error: String)
 	func workout(_ workout: Workout, valueChanged: Workout.ValueType)
 }
@@ -288,7 +288,8 @@ extension Workout: HKWorkoutSessionDelegate {
 			stopQueries()
 			save(session: workoutSession)
 			DispatchQueue.main.sync {
-				delegate?.workoutDidStop(self)
+				let stop = stopDate ?? Date()
+				delegate?.workoutDidStop(self, seconds: stop.timeIntervalSince(startDate))
 			}
 
 		default:
