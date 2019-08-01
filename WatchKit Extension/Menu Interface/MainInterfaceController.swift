@@ -20,6 +20,9 @@ class MainInterfaceController: WKInterfaceController {
 		// Populate the workouts table
 		let activities = Configuration.shared.activities
 		workoutsTable.setNumberOfRows(activities.count, withRowType: "WorkoutRow")
+		if #available(watchOSApplicationExtension 5.1, *) {
+			workoutsTable.curvesAtBottom = true
+		}
 
 		for index in 0 ..< activities.count {
 			guard let rowController = workoutsTable.rowController(at: index) as? WorkoutRowController else { continue }
