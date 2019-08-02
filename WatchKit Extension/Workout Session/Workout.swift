@@ -225,9 +225,10 @@ class Workout: NSObject {
 			}
 			else if type == .activeEnergyBurned {
 				activeEnergyBurned = sample.quantity.doubleValue(for: HKUnit.kilocalorie())
-
-				let newTotalEnergy = HKQuantity(unit: HKUnit.kilocalorie(), doubleValue: totalEnergyBurned + activeEnergyBurned)
-				totalEnergyBurned = newTotalEnergy.doubleValue(for: HKUnit.kilocalorie())
+			}
+			else if type == .basalEnergyBurned {
+				// Total energy = active energy + resting energy
+				totalEnergyBurned = activeEnergyBurned + sample.quantity.doubleValue(for: HKUnit.kilocalorie())
 			}
 		}
 	}
