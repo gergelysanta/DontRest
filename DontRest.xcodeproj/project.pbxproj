@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		74221FBD224E5D80005A8A74 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74221FBC224E5D80005A8A74 /* Workout.swift */; };
 		74221FBF224E74BD005A8A74 /* HKWorkoutSessionState+description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74221FBE224E74BD005A8A74 /* HKWorkoutSessionState+description.swift */; };
-		74221FC2224EAD8E005A8A74 /* WorkoutSettingsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74221FC1224EAD8E005A8A74 /* WorkoutSettingsInterfaceController.swift */; };
+		74221FC2224EAD8E005A8A74 /* WorkoutControlInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74221FC1224EAD8E005A8A74 /* WorkoutControlInterfaceController.swift */; };
 		745A611C224BD8500051CAEA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745A611B224BD8500051CAEA /* HealthKit.framework */; };
 		745A6120224BD8A30051CAEA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745A611F224BD8A30051CAEA /* HealthKit.framework */; };
 		746A5AEC2249E82C00E2FA79 /* RangedInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A5AEB2249E82C00E2FA79 /* RangedInt.swift */; };
@@ -32,7 +32,7 @@
 		74CDB5AA22480EDE00A201F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CDB5A922480EDE00A201F9 /* Assets.xcassets */; };
 		74CDB5BB22481A0300A201F9 /* SetupActivityInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5BA22481A0300A201F9 /* SetupActivityInterfaceController.swift */; };
 		74CDB5BD2248AD4400A201F9 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5BC2248AD4400A201F9 /* Configuration.swift */; };
-		74CDB5BF2248B4C500A201F9 /* WorkoutInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5BE2248B4C500A201F9 /* WorkoutInterfaceController.swift */; };
+		74CDB5BF2248B4C500A201F9 /* WorkoutMainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB5BE2248B4C500A201F9 /* WorkoutMainInterfaceController.swift */; };
 		74D5D7FC225F699800654D8E /* WorkoutRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5D7FB225F699800654D8E /* WorkoutRowController.swift */; };
 		74F47709224AB60600E3351C /* SetupTimesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F47708224AB60600E3351C /* SetupTimesInterfaceController.swift */; };
 /* End PBXBuildFile section */
@@ -82,7 +82,7 @@
 /* Begin PBXFileReference section */
 		74221FBC224E5D80005A8A74 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		74221FBE224E74BD005A8A74 /* HKWorkoutSessionState+description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKWorkoutSessionState+description.swift"; sourceTree = "<group>"; };
-		74221FC1224EAD8E005A8A74 /* WorkoutSettingsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSettingsInterfaceController.swift; sourceTree = "<group>"; };
+		74221FC1224EAD8E005A8A74 /* WorkoutControlInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutControlInterfaceController.swift; sourceTree = "<group>"; };
 		745A611B224BD8500051CAEA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		745A611D224BD8500051CAEA /* DontRest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DontRest.entitlements; sourceTree = "<group>"; };
 		745A611E224BD8A30051CAEA /* WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchKit Extension.entitlements"; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		74CDB5AC22480EDE00A201F9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		74CDB5BA22481A0300A201F9 /* SetupActivityInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupActivityInterfaceController.swift; sourceTree = "<group>"; };
 		74CDB5BC2248AD4400A201F9 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		74CDB5BE2248B4C500A201F9 /* WorkoutInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInterfaceController.swift; sourceTree = "<group>"; };
+		74CDB5BE2248B4C500A201F9 /* WorkoutMainInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutMainInterfaceController.swift; sourceTree = "<group>"; };
 		74D5D7FB225F699800654D8E /* WorkoutRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRowController.swift; sourceTree = "<group>"; };
 		74F47708224AB60600E3351C /* SetupTimesInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTimesInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,8 +159,8 @@
 		74221FE922524DD4005A8A74 /* Workout Interface */ = {
 			isa = PBXGroup;
 			children = (
-				74CDB5BE2248B4C500A201F9 /* WorkoutInterfaceController.swift */,
-				74221FC1224EAD8E005A8A74 /* WorkoutSettingsInterfaceController.swift */,
+				74CDB5BE2248B4C500A201F9 /* WorkoutMainInterfaceController.swift */,
+				74221FC1224EAD8E005A8A74 /* WorkoutControlInterfaceController.swift */,
 			);
 			path = "Workout Interface";
 			sourceTree = "<group>";
@@ -411,10 +411,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74221FC2224EAD8E005A8A74 /* WorkoutSettingsInterfaceController.swift in Sources */,
+				74221FC2224EAD8E005A8A74 /* WorkoutControlInterfaceController.swift in Sources */,
 				74CDB5BD2248AD4400A201F9 /* Configuration.swift in Sources */,
 				74CDB5A822480EDD00A201F9 /* NotificationController.swift in Sources */,
-				74CDB5BF2248B4C500A201F9 /* WorkoutInterfaceController.swift in Sources */,
+				74CDB5BF2248B4C500A201F9 /* WorkoutMainInterfaceController.swift in Sources */,
 				746B447D22EB206B003EC474 /* String+initFromSeconds.swift in Sources */,
 				74CDB5A622480EDD00A201F9 /* ExtensionDelegate.swift in Sources */,
 				74221FBF224E74BD005A8A74 /* HKWorkoutSessionState+description.swift in Sources */,

@@ -57,8 +57,10 @@ class MainInterfaceController: WKInterfaceController {
 		// Set it as new selected activity
 		Configuration.shared.activity = activity
 		// And start workout
-		WKInterfaceController.reloadRootControllers(withNames: ["WorkoutMainController","WorkoutMusicController","WorkoutWarningsController"],
-													contexts: [configuration, configuration, configuration])
+		WKInterfaceController.reloadRootPageControllers(withNames: ["WorkoutControlController","WorkoutMainController","WorkoutMusicController"],
+														contexts: [configuration, configuration, configuration],
+														orientation: .horizontal,
+														pageIndex: 1)
 	}
 
 }

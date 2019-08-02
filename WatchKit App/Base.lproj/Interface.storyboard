@@ -175,63 +175,49 @@
         <!--Workout-->
         <scene sceneID="eq3-JI-sxe">
             <objects>
-                <controller identifier="WorkoutMainController" title="Workout" id="JUj-1I-NbI" customClass="WorkoutInterfaceController" customModule="WatchKit_Extension">
+                <controller identifier="WorkoutMainController" title="Workout" id="JUj-1I-NbI" customClass="WorkoutMainInterfaceController" customModule="WatchKit_Extension">
                     <items>
-                        <label alignment="left" hidden="YES" text="--error--" numberOfLines="0" id="wH0-Vt-UMi">
-                            <fontDescription key="font" type="system" pointSize="24"/>
-                        </label>
-                        <timer alignment="left" id="HPN-k8-OdC">
+                        <timer alignment="left" textAlignment="left" id="HPN-k8-OdC">
                             <color key="textColor" name="linkColor" catalog="System" colorSpace="catalog"/>
                             <fontDescription key="font" type="system" pointSize="27"/>
                         </timer>
-                        <group width="1" alignment="left" id="9fh-j2-ybc">
+                        <group width="1" alignment="left" id="9fh-j2-ybc" userLabel="Hearth Rate Group">
                             <items>
-                                <label alignment="left" verticalAlignment="bottom" text="0" id="jGJ-m1-Keb">
+                                <label alignment="left" verticalAlignment="bottom" text="0" textAlignment="right" id="jGJ-m1-Keb">
                                     <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                                     <fontDescription key="font" type="system" pointSize="28"/>
                                 </label>
-                                <label alignment="left" verticalAlignment="bottom" text="BPM" numberOfLines="0" id="6Tb-s7-hfN">
+                                <label alignment="left" verticalAlignment="bottom" text="BPM" textAlignment="left" numberOfLines="0" id="6Tb-s7-hfN">
                                     <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                                     <fontDescription key="font" type="system" pointSize="24"/>
                                 </label>
                             </items>
                         </group>
-                        <group width="1" alignment="left" id="Rfh-gC-S5W">
+                        <group width="1" alignment="left" id="Rfh-gC-S5W" userLabel="Active Energy Group">
                             <items>
-                                <label alignment="left" text="0" id="Vy0-qf-aeY">
+                                <label alignment="left" text="0" textAlignment="right" id="Vy0-qf-aeY">
                                     <fontDescription key="font" type="system" pointSize="24"/>
                                 </label>
-                                <label alignment="left" text="ACTIVE CAL" numberOfLines="2" id="vR6-uZ-QNg">
+                                <label alignment="left" text="ACTIVE CAL" textAlignment="left" numberOfLines="2" id="vR6-uZ-QNg">
                                     <fontDescription key="font" type="system" pointSize="12"/>
                                 </label>
                             </items>
                         </group>
-                        <group width="1" alignment="left" id="2aX-qT-zi6">
+                        <group width="1" alignment="left" id="2aX-qT-zi6" userLabel="Total Energy Group">
                             <items>
-                                <label alignment="left" text="0" id="f0m-sI-I6D">
+                                <label alignment="left" text="0" textAlignment="right" id="f0m-sI-I6D">
                                     <fontDescription key="font" type="system" pointSize="24"/>
                                 </label>
-                                <label alignment="left" text="TOTAL CAL" numberOfLines="2" id="s30-vs-dwd">
+                                <label alignment="left" text="TOTAL CAL" textAlignment="left" numberOfLines="2" id="s30-vs-dwd">
                                     <fontDescription key="font" type="system" pointSize="12"/>
                                 </label>
                             </items>
                         </group>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="End" id="L3E-eT-TFH">
-                            <color key="backgroundColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
-                            <connections>
-                                <action selector="endButtonTapped" destination="JUj-1I-NbI" id="CtS-vq-DA7"/>
-                            </connections>
-                        </button>
                     </items>
                     <connections>
-                        <outlet property="activeEnergyGroup" destination="Rfh-gC-S5W" id="t8b-GP-ft1"/>
                         <outlet property="activeEnergyLabel" destination="Vy0-qf-aeY" id="rVj-b4-t58"/>
-                        <outlet property="endButton" destination="L3E-eT-TFH" id="3vU-sc-lGL"/>
-                        <outlet property="errorLabel" destination="wH0-Vt-UMi" id="N2N-r4-OId"/>
-                        <outlet property="heartRateGroup" destination="9fh-j2-ybc" id="mlq-6R-FzT"/>
                         <outlet property="heartRateLabel" destination="jGJ-m1-Keb" id="c2F-Si-d98"/>
                         <outlet property="timer" destination="HPN-k8-OdC" id="NaY-Ih-T89"/>
-                        <outlet property="totalEnergyGroup" destination="2aX-qT-zi6" id="ogF-s8-B1n"/>
                         <outlet property="totalEnergyLabel" destination="f0m-sI-I6D" id="bhz-Q9-SF7"/>
                         <segue destination="qQB-jj-fy6" kind="relationship" relationship="nextPage" id="qP0-JC-g7s"/>
                     </connections>
@@ -246,27 +232,34 @@
                     <items>
                         <nowPlayingView alignment="left" semanticContentAttribute="playback" id="XWD-R8-l1m"/>
                     </items>
-                    <connections>
-                        <segue destination="8Gx-jR-sNN" kind="relationship" relationship="nextPage" id="kac-E8-pCK"/>
-                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="736" y="-63"/>
+            <point key="canvasLocation" x="769" y="-63"/>
         </scene>
-        <!--Warnings-->
+        <!--Control-->
         <scene sceneID="Yne-HU-Y0l">
             <objects>
-                <controller identifier="WorkoutWarningsController" title="Warnings" id="8Gx-jR-sNN" customClass="WorkoutSettingsInterfaceController" customModule="WatchKit_Extension">
+                <controller identifier="WorkoutControlController" title="Control" id="8Gx-jR-sNN" customClass="WorkoutControlInterfaceController" customModule="WatchKit_Extension">
                     <items>
                         <switch width="1" alignment="left" value="YES" title="Warn Me!" id="8r8-7i-stT">
                             <connections>
                                 <action selector="warnMeSwitchToggled:" destination="8Gx-jR-sNN" id="0h8-pi-F0p"/>
                             </connections>
                         </switch>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="End" id="L3E-eT-TFH">
+                            <color key="backgroundColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                            <connections>
+                                <action selector="endButtonTapped" destination="8Gx-jR-sNN" id="5NC-t8-ZFB"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="endButton" destination="L3E-eT-TFH" id="N72-bq-NIS"/>
+                        <segue destination="JUj-1I-NbI" kind="relationship" relationship="nextPage" id="7At-Ce-fU3"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="977" y="-63"/>
+            <point key="canvasLocation" x="220" y="-63"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
