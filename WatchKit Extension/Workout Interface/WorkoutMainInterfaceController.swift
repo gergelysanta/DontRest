@@ -16,6 +16,13 @@ class WorkoutMainInterfaceController: WKInterfaceController {
 	@IBOutlet var activeEnergyLabel: WKInterfaceLabel!
 	@IBOutlet var totalEnergyLabel: WKInterfaceLabel!
 
+	private var configuration: SetsWorkoutConfiguration?
+
+	override func awake(withContext context: Any?) {
+		super.awake(withContext: context)
+		configuration = context as? SetsWorkoutConfiguration
+	}
+
 	override func didAppear() {
 		super.didAppear()
 
@@ -42,7 +49,10 @@ class WorkoutMainInterfaceController: WKInterfaceController {
 	}
 
 	private func exitWorkoutInterface() {
-		WKInterfaceController.reloadRootControllers(withNames: ["MainInterface"], contexts: nil)
+		WKInterfaceController.reloadRootPageControllers(withNames: ["MainInterface"],
+														contexts: nil,
+														orientation: .horizontal,
+														pageIndex: 0)
 	}
 	
 }

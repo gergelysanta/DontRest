@@ -236,6 +236,20 @@
             </objects>
             <point key="canvasLocation" x="769" y="-63"/>
         </scene>
+        <!--WorkoutCounterController-->
+        <scene sceneID="PzW-Hl-GJ2">
+            <objects>
+                <controller identifier="WorkoutCounterController" fullBounds="YES" id="9Yk-ep-FfR" customClass="WorkoutCounterInterfaceController" customModule="WatchKit_Extension">
+                    <items>
+                        <spriteKitScene width="1" height="1" alignment="center" verticalAlignment="center" id="ZSr-fq-Eyt"/>
+                    </items>
+                    <connections>
+                        <outlet property="counterInterface" destination="ZSr-fq-Eyt" id="TSv-5z-q37"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-48" y="-63"/>
+        </scene>
         <!--Control-->
         <scene sceneID="Yne-HU-Y0l">
             <objects>
